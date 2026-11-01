@@ -1,0 +1,2362 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Oscars 2027 Forecast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=IBM+Plex+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&family=Archivo:wdth,wght@100..125,500..900&display=swap">
+<style>
+/* Layout: a ballot ledger — sticky masthead and tab rail over ruled ballot cards in an
+   auto-fill grid; every contender and film opens in a side drawer with its evidence. */
+:root {
+  --bg: #EDEFEC;          /* ledger paper */
+  --surface: #FBFBF8;     /* ballot card */
+  --surface-2: #F3F4F0;   /* ruled header band */
+  --ink: #141B2D;         /* navy ink */
+  --ink-2: #4A5367;
+  --ink-3: #737C8E;
+  --rule: #DCDFDA;
+  --rule-strong: #C2C7C1;
+  --nom: #3B5BAE;         /* nomination odds (validated pair) */
+  --nom-track: #E1E6F1;
+  --win: #B07A16;         /* win odds / statuette gold */
+  --win-track: #F1E8D4;
+  --gold-ink: #7C540C;    /* gold that passes as text */
+  --good: #2D7650;
+  --good-wash: #E3F0E8;
+  --bad: #AE3838;
+  --bad-wash: #F6E4E2;
+  --focus: #2F5BD3;
+  --mark: #141B2D;
+  --shadow: 0 1px 0 rgba(20, 27, 45, .04), 0 8px 24px -16px rgba(20, 27, 45, .25);
+
+  --display: "Bodoni Moda", "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+  --sans: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-xs: .75rem; --fs-sm: .8125rem; --fs-base: .9375rem; --fs-md: 1.0625rem;
+  --fs-lg: 1.375rem; --fs-xl: 1.875rem; --fs-2xl: clamp(2rem, 4.6vw, 3.25rem);
+  --r: 10px; --r-sm: 6px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B111E; --surface: #131B2D; --surface-2: #18223A; --ink: #ECEEF3; --ink-2: #AFB6C5; --ink-3: #8089A0;
+    --rule: #232D45; --rule-strong: #34405D; --nom: #6884DA; --nom-track: #222D48; --win: #B8862E; --win-track: #2D2817;
+    --gold-ink: #E0BA6B; --good: #67C28F; --good-wash: #15302A; --bad: #EA8880; --bad-wash: #3A1F24; --focus: #8EB0FF; --mark: #22304F;
+    --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 28px -18px rgba(0, 0, 0, .8);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B111E; --surface: #131B2D; --surface-2: #18223A; --ink: #ECEEF3; --ink-2: #AFB6C5; --ink-3: #8089A0;
+  --rule: #232D45; --rule-strong: #34405D; --nom: #6884DA; --nom-track: #222D48; --win: #B8862E; --win-track: #2D2817;
+  --gold-ink: #E0BA6B; --good: #67C28F; --good-wash: #15302A; --bad: #EA8880; --bad-wash: #3A1F24; --focus: #8EB0FF; --mark: #22304F;
+  --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 28px -18px rgba(0, 0, 0, .8);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: var(--fs-base); line-height: 1.5; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.mono, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-inline: var(--gutter); }
+.eyebrow { font-size: var(--fs-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+.muted { color: var(--ink-3); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- masthead ---------- */
+.mast { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: saturate(1.2) blur(8px); -webkit-backdrop-filter: saturate(1.2) blur(8px); border-bottom: 1px solid var(--rule); }
+.mast-row { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; padding-block: 12px 8px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.brand svg { flex: none; }
+.brand-name { font-family: var(--display); font-size: 1.45rem; font-weight: 600; line-height: 1.05; letter-spacing: -.01em; }
+.brand-name i { font-weight: 500; }
+.brand-sub { font-size: var(--fs-xs); color: var(--ink-3); letter-spacing: .04em; }
+.live { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-sm); color: var(--ink-2); }
+.live .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink-3) 18%, transparent); }
+.live.on .dot { background: var(--good); box-shadow: 0 0 0 3px color-mix(in srgb, var(--good) 22%, transparent); }
+.tabs { display: flex; flex-wrap: wrap; gap: 2px 4px; padding-bottom: 6px; }
+.tabs a { text-decoration: none; padding: 6px 10px; border-radius: 999px; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-2); }
+.tabs a:hover { background: var(--surface-2); color: var(--ink); }
+.tabs a[aria-current="page"] { background: var(--ink); color: var(--bg); }
+
+main { padding-block: 24px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
+main > *, section, .rub > *, .two > * { min-width: 0; }
+section > header.sec { display: flex; align-items: end; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.sec h2 { font-family: var(--display); font-size: var(--fs-xl); font-weight: 600; letter-spacing: -.01em; line-height: 1.1; }
+.sec p { margin: 4px 0 0; color: var(--ink-2); max-width: 65ch; }
+
+/* ---------- countdown ledger ---------- */
+.ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); border: 1px solid var(--rule-strong); border-radius: var(--r); background: var(--surface); overflow: hidden; }
+.ledger > div { padding: 14px 18px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 0 -1px -1px 0; display: grid; gap: 2px; min-width: 0; align-content: start; }
+.ledger .big { font-family: var(--mono); font-size: 2rem; font-weight: 500; line-height: 1.1; letter-spacing: -.02em; }
+.ledger .big small { font-size: var(--fs-sm); color: var(--ink-3); font-weight: 400; letter-spacing: 0; margin-left: 4px; }
+.ledger .what { font-size: var(--fs-sm); color: var(--ink-2); }
+
+/* ---------- Best Picture spotlight ---------- */
+.spot { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; }
+.spot-lead { padding: 28px 28px 24px; display: grid; align-content: start; gap: 14px; border-right: 1px solid var(--rule); background:
+  radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--win) 10%, transparent), transparent 60%), var(--surface); }
+.spot-lead .title { font-family: var(--display); font-style: italic; font-weight: 500; font-size: var(--fs-2xl); line-height: 1.02; letter-spacing: -.015em; }
+.spot-lead .title button { all: unset; cursor: pointer; }
+.spot-lead .title button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.spot-lead .meta { color: var(--ink-2); font-size: var(--fs-sm); }
+.figs { display: flex; gap: 22px; flex-wrap: wrap; }
+.fig { display: grid; gap: 0; }
+.fig b { font-family: var(--sans); font-size: 2.1rem; font-weight: 700; line-height: 1.05; }
+.fig span { font-size: var(--fs-xs); color: var(--ink-3); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+.spot-list { padding: 18px 22px 16px; min-width: 0; }
+.spot-note { font-size: var(--fs-sm); color: var(--ink-2); margin: 0; }
+
+/* ---------- odds rows (shared) ---------- */
+.odds { list-style: none; margin: 0; padding: 0; }
+.odds-head, .orow { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(70px, 34%) 48px; align-items: center; gap: 10px; }
+.odds-head { font-size: var(--fs-xs); color: var(--ink-3); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; padding: 0 0 6px; border-bottom: 1px solid var(--rule); }
+.odds-head .k { display: inline-flex; align-items: center; gap: 6px; }
+.key-nom, .key-win { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.key-nom { background: var(--nom); } .key-win { background: var(--win); }
+.orow { padding: 7px 0; border-bottom: 1px solid var(--rule); }
+.orow:last-child { border-bottom: 0; }
+.orow .rk { font-family: var(--mono); font-size: var(--fs-xs); color: var(--ink-3); text-align: right; }
+.who { min-width: 0; }
+.who button, .linkish { all: unset; cursor: pointer; display: block; min-width: 0; max-width: 100%; }
+.who button:focus-visible, .linkish:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+.who .n { font-weight: 600; display: flex; align-items: center; gap: 6px; min-width: 0; }
+.who .n span.t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 0 1 auto; }
+.who .n .status { flex: none; }
+.who button:hover .t { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.who .s { font-size: var(--fs-xs); color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+.trophy { flex: none; color: var(--win); }
+.bar { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.bar .track { flex: 1; height: 8px; background: var(--nom-track); border-radius: 4px; overflow: hidden; min-width: 30px; }
+.bar .fill { display: block; height: 100%; background: var(--nom); border-radius: 0 4px 4px 0; }
+.bar .v { font-family: var(--mono); font-size: var(--fs-sm); width: 3.4em; text-align: right; flex: none; }
+.winp { font-family: var(--mono); font-size: var(--fs-sm); text-align: right; color: var(--ink-2); }
+.winp.top { color: var(--gold-ink); font-weight: 600; }
+.cutline { display: flex; align-items: center; gap: 8px; font-size: var(--fs-xs); color: var(--ink-3); text-transform: uppercase; letter-spacing: .1em; padding: 6px 0; }
+.cutline::before, .cutline::after { content: ""; flex: 1; border-top: 1px dashed var(--rule-strong); }
+.orow.out { opacity: .72; }
+
+/* ---------- category grid ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--rule-strong); background: var(--surface); padding: 5px 11px; border-radius: 999px; font-size: var(--fs-sm); font-weight: 600; cursor: pointer; color: var(--ink-2); }
+.chip:hover { border-color: var(--ink-3); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 16px; align-items: start; }
+.card { background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--r); overflow: hidden; }
+.card > header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 14px 16px 10px; border-bottom: 1px solid var(--rule); background: var(--surface-2); }
+.card h3 { font-family: var(--display); font-size: 1.28rem; font-weight: 600; line-height: 1.15; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.card .slots { font-size: var(--fs-xs); color: var(--ink-3); white-space: nowrap; }
+.card .body { padding: 6px 16px 4px; }
+.card > footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 9px 16px 12px; border-top: 1px solid var(--rule); font-size: var(--fs-sm); color: var(--ink-2); flex-wrap: wrap; }
+.card > footer a { font-weight: 600; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.card > footer a:hover { text-decoration: underline; }
+.card .odds-head, .card .orow { grid-template-columns: 18px minmax(0, 1fr) minmax(60px, 31%) 38px; gap: 8px; }
+.mode-pill { font-family: var(--sans); letter-spacing: 0; display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs); font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--rule); color: var(--ink-2); white-space: nowrap; }
+.mode-pill.hot { background: var(--win-track); border-color: transparent; color: var(--gold-ink); }
+
+/* ---------- two-up panels ---------- */
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--r); padding: 16px 18px; min-width: 0; }
+.panel h3 { font-size: var(--fs-md); font-weight: 700; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.panel h3 a { font-size: var(--fs-sm); font-weight: 600; text-decoration: none; color: var(--ink-2); }
+.panel h3 a:hover { text-decoration: underline; }
+.empty { color: var(--ink-3); font-size: var(--fs-sm); padding: 6px 0; margin: 0; }
+.mlist { list-style: none; margin: 0; padding: 0; display: grid; }
+.mlist li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--rule); }
+.mlist li:last-child { border-bottom: 0; }
+.delta { font-family: var(--mono); font-size: var(--fs-sm); font-weight: 500; padding: 1px 7px; border-radius: 4px; white-space: nowrap; }
+.delta.up { background: var(--good-wash); color: var(--good); }
+.delta.down { background: var(--bad-wash); color: var(--bad); }
+.delta.flat { color: var(--ink-3); }
+
+/* ---------- feed (buzz / evidence) ---------- */
+.feed { list-style: none; margin: 0; padding: 0; display: grid; }
+.item { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 4px 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.item:last-child { border-bottom: 0; }
+.item .when { font-family: var(--mono); font-size: var(--fs-xs); color: var(--ink-3); padding-top: 3px; }
+.item .head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.item .ttl { font-weight: 700; }
+.item p { margin: 3px 0 0; color: var(--ink-2); font-size: var(--fs-sm); max-width: 70ch; }
+.tag { display: inline-flex; align-items: center; gap: 4px; font-size: .6875rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--rule); white-space: nowrap; }
+.tag.good { background: var(--good-wash); color: var(--good); border-color: transparent; }
+.tag.bad { background: var(--bad-wash); color: var(--bad); border-color: transparent; }
+.fx { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.fxc { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs); padding: 3px 8px; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink-2); max-width: 100%; }
+.fxc:hover { border-color: var(--ink-3); color: var(--ink); }
+.fxc:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.fxc .lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fxc .pts { font-family: var(--mono); font-weight: 600; }
+.fxc .pts.up { color: var(--good); } .fxc .pts.down { color: var(--bad); }
+.src { font-size: var(--fs-xs); color: var(--ink-3); margin-top: 6px; display: inline-flex; gap: 4px; }
+.src a { color: var(--ink-2); }
+
+/* ---------- tables ---------- */
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--r); }
+table { border-collapse: collapse; width: 100%; font-size: var(--fs-sm); }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+thead th { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); font-weight: 600; background: var(--surface-2); white-space: nowrap; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr.clickable:hover { background: color-mix(in srgb, var(--surface-2) 70%, transparent); }
+td.n, th.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td .bar { min-width: 120px; }
+td .bar.win .track { background: var(--win-track); }
+td .bar.win .fill { background: var(--win); }
+tr.cut td { border-bottom: 1px dashed var(--rule-strong); }
+tr.field td { color: var(--ink-3); font-style: italic; }
+.status { font-size: .6875rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+.status.nominee, .status.shortlisted { background: var(--nom-track); color: var(--nom); }
+.status.winner { background: var(--win-track); color: var(--gold-ink); }
+.status.out { background: var(--surface-2); color: var(--ink-3); }
+
+.catmeta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--ink-2); font-size: var(--fs-sm); align-items: center; }
+.back { font-size: var(--fs-sm); font-weight: 600; text-decoration: none; color: var(--ink-2); display: inline-flex; gap: 6px; margin-bottom: 10px; }
+.back:hover { color: var(--ink); text-decoration: underline; }
+.catnav { display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 16px; }
+.catnav a { font-size: var(--fs-xs); text-decoration: none; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--rule); color: var(--ink-2); background: var(--surface); }
+.catnav a[aria-current="page"] { border-color: var(--ink); color: var(--ink); font-weight: 700; }
+
+/* ---------- festivals / calendar ---------- */
+.timeline { display: grid; gap: 16px; }
+.fest { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 4px 22px; background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--r); padding: 18px 20px; }
+.fest .dates { font-family: var(--mono); font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.35; }
+.fest .dates b { display: block; font-family: var(--display); font-size: 1.5rem; font-weight: 600; color: var(--ink); line-height: 1.1; margin-bottom: 4px; letter-spacing: -.01em; }
+.fest h3 { font-family: var(--display); font-size: 1.35rem; font-weight: 600; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.fest .sub { color: var(--ink-2); font-size: var(--fs-sm); margin-top: 2px; }
+.awards { list-style: none; margin: 12px 0 0; padding: 0; display: grid; }
+.awards li { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr); gap: 2px 14px; padding: 8px 0; border-top: 1px solid var(--rule); font-size: var(--fs-sm); }
+.awards .aw { color: var(--ink-3); }
+.awards .wn { font-weight: 600; }
+.awards .note { grid-column: 2; color: var(--ink-2); font-weight: 400; }
+.awards .awx { grid-column: 2; min-width: 0; }
+.awards .awx .fx { margin-top: 2px; }
+.cal { display: grid; gap: 22px; }
+.cal h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin-bottom: 6px; }
+.ev { display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; gap: 4px 16px; padding: 11px 0; border-top: 1px solid var(--rule); align-items: start; }
+.ev .d { font-family: var(--mono); font-size: var(--fs-sm); color: var(--ink-2); }
+.ev .l { font-weight: 700; }
+.ev .i { font-size: var(--fs-sm); color: var(--ink-2); }
+.ev.past { opacity: .62; }
+.ev .state { font-size: .6875rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+.ev.today .state { color: var(--gold-ink); }
+
+/* ---------- method ---------- */
+.prose { max-width: 70ch; color: var(--ink-2); }
+.prose p { margin: 0 0 12px; }
+.prose strong { color: var(--ink); }
+.formula { font-family: var(--mono); font-size: var(--fs-sm); background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--r-sm); padding: 12px 14px; color: var(--ink); overflow-x: auto; }
+.rub { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+.rub table td:last-child { font-family: var(--mono); white-space: nowrap; }
+.foot { color: var(--ink-3); font-size: var(--fs-xs); border-top: 1px solid var(--rule); padding-top: 16px; }
+
+/* ---------- drawer ---------- */
+.scrim { position: fixed; inset: 0; background: rgba(8, 12, 22, .42); z-index: 40; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(560px, 100%); z-index: 41; background: var(--surface); border-left: 1px solid var(--rule-strong);
+  box-shadow: -24px 0 48px -32px rgba(0, 0, 0, .5); display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0px); }
+.drawer .dh { display: flex; justify-content: space-between; align-items: start; gap: 12px; padding: 18px 22px 14px; border-bottom: 1px solid var(--rule); }
+.drawer .dh h2 { font-family: var(--display); font-size: 1.9rem; font-weight: 600; line-height: 1.08; letter-spacing: -.01em; }
+.drawer .dsub { color: var(--ink-2); font-size: var(--fs-sm); margin-top: 4px; }
+.drawer .dsub button { all: unset; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.drawer .dsub button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.x { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rule-strong); background: var(--surface); cursor: pointer; display: grid; place-items: center; }
+.x:hover { background: var(--surface-2); }
+/* drawer header as key art: the film's still (or its tinted color field) behind the title, like the film page hero */
+.drawer .dh.dhero { position: relative; isolation: isolate; overflow: hidden; min-height: 260px; padding: 18px 22px 58px; align-items: stretch; border-bottom: 0;
+  color: var(--hero-ink); background: linear-gradient(180deg, hsl(var(--ph) 28% 17%), hsl(var(--ph) 34% 7%)); }
+.dhero > div:not(.dbg) { align-self: end; position: relative; }
+.dhero .dbg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+  background: conic-gradient(from 198deg at 78% -14%, transparent 0deg, hsl(var(--ph) 45% 78% / .16) 9deg, hsl(var(--ph) 45% 78% / .05) 22deg, transparent 30deg),
+    radial-gradient(60% 85% at 70% 38%, hsl(var(--ph) 34% 40% / .85), transparent 70%),
+    radial-gradient(50% 60% at 12% 110%, hsl(calc(var(--ph) + 20) 38% 30% / .6), transparent 70%); }
+.dhero .dbg img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: 100%; object-fit: cover; object-position: 60% 35%; }
+.dhero .dbg::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(0deg, var(--surface) 0, color-mix(in srgb, var(--surface) 0%, transparent) 72px),
+    linear-gradient(0deg, hsl(var(--ph) 30% 6% / .94) 72px, hsl(var(--ph) 30% 6% / .62) 50%, hsl(var(--ph) 30% 6% / .12) 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, .02) 0 1px, transparent 1px 3px); }
+.dhero .dwm { position: absolute; right: -2%; bottom: -10%; font-family: var(--wide); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125;
+  font-size: 7.5rem; line-height: .8; letter-spacing: -.04em; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(238, 243, 241, .1); text-transform: uppercase; }
+.dhero .eyebrow { color: var(--hero-ink-2); }
+.drawer .dhero h2 { color: var(--hero-ink); text-shadow: 0 2px 18px hsl(var(--ph) 40% 4% / .85), 0 0 2px hsl(var(--ph) 40% 4% / .5); }
+.drawer .dhero .dsub { color: var(--hero-ink-2); }
+.drawer .dhero .dsub button { color: var(--hero-ink); }
+.dhero .x { position: relative; align-self: start; color: var(--hero-ink); background: hsl(var(--ph) 30% 8% / .45); border-color: rgba(238, 243, 241, .22);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.dhero .x:hover { background: hsl(var(--ph) 30% 14% / .7); }
+.dhero button:focus-visible { outline-color: var(--hero-gold); }
+.drawer .dhero + .db { padding-top: 4px; }
+@media (max-width: 760px) { .drawer .dh.dhero { min-height: 220px; } .dhero .dwm { font-size: 5.5rem; } }
+.db { overflow-y: auto; padding: 18px 22px calc(28px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 22px; }
+.db h4 { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); margin: 0 0 8px; font-weight: 700; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.tile { border: 1px solid var(--rule); border-radius: var(--r-sm); padding: 10px 12px; background: var(--surface-2); min-width: 0; }
+.tile .lab { font-size: var(--fs-xs); color: var(--ink-3); }
+.tile .val { font-size: 1.6rem; font-weight: 700; line-height: 1.15; }
+.tile .dl { font-size: var(--fs-xs); margin-top: 2px; }
+.parts { display: grid; gap: 4px; }
+.part { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr) 4.2em; gap: 10px; align-items: center; font-size: var(--fs-sm); }
+.part .pl { color: var(--ink-2); }
+.part .pv { font-family: var(--mono); text-align: right; }
+.part.total { border-top: 1px solid var(--rule); padding-top: 6px; margin-top: 2px; font-weight: 700; }
+.div { position: relative; height: 10px; }
+.div::before { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; border-left: 1px solid var(--rule-strong); }
+.div i { position: absolute; top: 1px; height: 8px; border-radius: 2px; }
+.div i.up { left: 50%; background: var(--good); border-radius: 0 3px 3px 0; }
+.div i.down { right: 50%; background: var(--bad); border-radius: 3px 0 0 3px; }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .legend { display: flex; gap: 14px; font-size: var(--fs-xs); color: var(--ink-2); margin-bottom: 6px; }
+.chart .legend span { display: inline-flex; align-items: center; gap: 6px; }
+.chart .legend i { width: 14px; height: 2px; border-radius: 1px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: var(--fs-xs); padding: 6px 8px; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -110%); }
+.tip b { font-family: var(--mono); }
+.note-box { font-size: var(--fs-sm); color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--rule); border-radius: var(--r-sm); padding: 10px 12px; }
+.catlist { display: grid; gap: 0; }
+.catlist .orow { grid-template-columns: minmax(0, 1fr) minmax(70px, 38%) 44px; }
+
+/* ---------- predicted nominations ---------- */
+.tier { display: inline-block; font-size: .625rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; white-space: nowrap; border: 1px solid transparent; line-height: 1.3; }
+.tier.lock { background: var(--nom); color: var(--surface); }
+.tier.likely { background: var(--nom-track); color: var(--ink); }
+.tier.leaning { background: var(--surface-2); color: var(--ink-2); border-color: var(--rule-strong); }
+.tier.tossup { color: var(--ink-2); border-color: var(--rule-strong); border-style: dashed; }
+.tier.long { color: var(--ink-3); border-color: var(--rule); border-style: dashed; }
+.sec p.tiers-key { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 8px 0 0; font-size: var(--fs-xs); color: var(--ink-3); max-width: none; }
+.tiers-key .tier { margin-right: 4px; }
+.blist, .tlist { list-style: none; margin: 0; padding: 0; }
+.brow { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto 3.1em; gap: 8px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--rule); }
+.brow:last-child { border-bottom: 0; }
+.brow .rk, .trow .rk { font-family: var(--mono); font-size: var(--fs-xs); color: var(--ink-3); text-align: right; }
+.brow .v { font-family: var(--mono); font-size: var(--fs-sm); text-align: right; }
+.ballot > footer .bub { min-width: 0; flex: 1 1 14em; }
+.bub .linkish { display: inline; font-weight: 600; color: var(--ink); }
+.bub .linkish:hover { text-decoration: underline; text-underline-offset: 3px; }
+.trow { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(110px, 32%) 4.2rem; gap: 2px 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.tlist .trow:last-child { border-bottom: 0; }
+.trow.th { font-size: var(--fs-xs); color: var(--ink-3); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; padding: 0 0 6px; }
+.trow .ex { font-family: var(--mono); font-size: var(--fs-sm); color: var(--ink-2); text-align: right; }
+.trow.th .ex { font-family: var(--sans); font-size: var(--fs-xs); color: var(--ink-3); }
+.trow .bar .v { font-weight: 600; }
+.trow .tc { grid-column: 2 / -1; font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.45; }
+.tally .body { padding: 8px 16px 6px; }
+
+/* ---------- awards won ---------- */
+.medal { flex: none; color: var(--win); }
+.mb { display: inline-flex; align-items: center; gap: 3px; flex: none; font-family: var(--mono); font-size: var(--fs-xs); font-weight: 600; color: var(--gold-ink); }
+.awcell { display: inline-flex; gap: 6px; align-items: center; justify-content: flex-end; }
+.awcell .muted { font-family: var(--sans); font-size: var(--fs-xs); }
+.tag.res.win { background: var(--win-track); color: var(--gold-ink); border-color: transparent; }
+.tag.res.nom { background: var(--nom-track); color: var(--nom); border-color: transparent; }
+.bar.win .track { background: var(--win-track); }
+.bar.win .fill { background: var(--win); }
+.wrow, .odds-head.wh { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(96px, 40%); gap: 10px; align-items: center; }
+.wrow { padding: 8px 0; border-bottom: 1px solid var(--rule); }
+.wrow:last-child { border-bottom: 0; }
+.wrow .rk { font-family: var(--mono); font-size: var(--fs-xs); color: var(--ink-3); text-align: right; }
+.card.wide { grid-column: 1 / -1; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 32px; }
+.awgrid { grid-template-columns: minmax(0, 1fr); }
+.awcard .body { padding: 8px 16px 6px; container-type: inline-size; }
+.aw-head, .awrow { display: grid; grid-template-columns: minmax(0, 1fr) 2.6rem 6rem; gap: 4px 12px; align-items: center; }
+.aw-head { font-size: var(--fs-xs); color: var(--ink-3); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; padding: 0 0 6px; border-bottom: 1px solid var(--rule); }
+.aw-head span { white-space: nowrap; }
+.aw-head span:nth-child(n+3) { text-align: right; }
+.aw-head .h-aw { display: none; }
+.awl { list-style: none; margin: 0; padding: 0; }
+.awrow { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.awrow:last-child { border-bottom: 0; }
+.awt { text-align: right; }
+.awo { font-family: var(--mono); font-size: var(--fs-sm); text-align: right; color: var(--ink-2); display: grid; line-height: 1.25; }
+.awo small { font-family: var(--sans); font-size: .6875rem; color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.awcs { grid-column: 1 / -1; list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 5px; min-width: 0; }
+.awc { display: inline-flex; align-items: center; gap: 5px; font-size: var(--fs-xs); line-height: 1.35; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--rule); background: var(--surface-2); color: var(--ink-2); max-width: 100%; min-width: 0; }
+.awc > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.awc.win { background: var(--win-track); border-color: transparent; color: var(--ink); }
+.awc .res { font-size: .625rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+.awc .aww { color: var(--ink-2); }
+.awcard > footer .chip { padding: 3px 10px; }
+.awcard > header { flex-wrap: wrap; row-gap: 2px; }
+.awcard > header .slots { white-space: normal; }
+@container (min-width: 700px) {
+  .aw-head, .awrow { grid-template-columns: minmax(0, 14rem) minmax(0, 1fr) 2.6rem 6rem; align-items: start; }
+  .aw-head { align-items: end; }
+  .aw-head .h-aw { display: block; }
+  .awrow .awt { grid-column: 3; grid-row: 1; padding-top: 2px; }
+  .awrow .awo { grid-column: 4; grid-row: 1; padding-top: 1px; }
+  .awcs { grid-column: 2; grid-row: 1; margin: 0; }
+}
+.tiles.t4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* ---------- states ---------- */
+.state-box { background: var(--surface); border: 1px dashed var(--rule-strong); border-radius: var(--r); padding: 28px; display: grid; gap: 8px; max-width: 720px; }
+.state-box h2 { font-family: var(--display); font-size: var(--fs-xl); font-weight: 600; }
+.state-box p { margin: 0; color: var(--ink-2); }
+.skel { height: 12px; border-radius: 6px; background: var(--surface-2); }
+.tpl-note { display: none; }
+
+@media (min-width: 761px) {
+  .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs a { flex: none; }
+  .cols > div + div .odds-head { display: none; }
+  .ledger.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ledger.five > div:first-child { grid-column: 1 / -1; }
+  .trow { grid-template-columns: 22px minmax(0, 1fr) auto 3.2rem; }
+  .trow .bar .track { display: none; }
+  .trow .bar .v { width: auto; min-width: 2ch; }
+  .tiles.t4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spot { grid-template-columns: minmax(0, 1fr); }
+  .spot-lead { border-right: 0; border-bottom: 1px solid var(--rule); padding: 22px 18px 18px; }
+  .spot-list { padding: 14px 16px; }
+  .fest { grid-template-columns: minmax(0, 1fr); }
+  .awards li { grid-template-columns: minmax(0, 1fr); }
+  .awards .note, .awards .awx { grid-column: 1; }
+  .ev { grid-template-columns: 76px minmax(0, 1fr); }
+  .ev .state { grid-column: 2; }
+  .item { grid-template-columns: minmax(0, 1fr); }
+  .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .tile .val { font-size: 1.3rem; }
+  .drawer .dh h2 { font-size: 1.6rem; }
+  .part { grid-template-columns: minmax(0, 9.5em) minmax(0, 1fr) 3.8em; }
+  .ledger .big { font-size: 1.6rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .drawer:not([hidden]) { animation: slidein .22s ease-out; }
+  @keyframes slidein { from { transform: translateX(24px); opacity: .4; } to { transform: none; opacity: 1; } }
+}
+
+/* ---------- film page: a full-bleed, single-hue "key art" hero tinted per film ---------- */
+:root {
+  --hero-ink: #EEF3F1; --hero-ink-2: rgba(238, 243, 241, .74); --hero-ink-3: rgba(238, 243, 241, .52);
+  --hero-line: rgba(238, 243, 241, .14); --hero-gold: #D9AE5C;
+  --wide: "Archivo", "Schibsted Grotesk", system-ui, sans-serif;
+}
+
+.fp { display: grid; gap: 20px; }
+.fsum { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border: 1px solid var(--rule-strong); border-radius: var(--r); background: var(--surface); overflow: hidden; }
+.fsum > div { padding: 14px 16px 13px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 0 -1px -1px 0; display: grid; gap: 1px; min-width: 0; }
+.fsum .l { font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
+.fsum .v { font-family: var(--mono); font-size: 1.7rem; font-weight: 500; line-height: 1.15; letter-spacing: -.02em; }
+.fsum .s { font-size: var(--fs-xs); color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fsec { display: grid; gap: 16px; min-width: 0; }
+.ftabs { display: flex; gap: 2px; border-bottom: 1px solid var(--rule-strong); overflow-x: auto; scrollbar-width: none; }
+.ftabs::-webkit-scrollbar { display: none; }
+.ftabs button { all: unset; cursor: pointer; padding: 10px 14px 11px; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-3); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.ftabs button small { font-family: var(--mono); font-size: .6875rem; color: var(--ink-3); margin-left: 3px; }
+.ftabs button:hover { color: var(--ink); }
+.ftabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--gold-ink); }
+.ftabs button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.fout { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+.fp [id] { scroll-margin-top: 130px; }
+.fhero { --ph: 160; position: relative; isolation: isolate; overflow: hidden; border-radius: 18px; color: var(--hero-ink);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 270px); min-height: clamp(420px, 42vw, 520px);
+  background: linear-gradient(180deg, hsl(var(--ph) 28% 17%), hsl(var(--ph) 34% 7%)); box-shadow: 0 30px 60px -36px hsl(var(--ph) 40% 8% / .9); }
+.fbg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+  background:
+    conic-gradient(from 198deg at 74% -12%, transparent 0deg, hsl(var(--ph) 45% 78% / .16) 9deg, hsl(var(--ph) 45% 78% / .05) 22deg, transparent 30deg),
+    radial-gradient(55% 75% at 66% 46%, hsl(var(--ph) 34% 40% / .85), transparent 70%),
+    radial-gradient(45% 55% at 18% 105%, hsl(calc(var(--ph) + 20) 38% 30% / .6), transparent 70%); }
+.fbg::after { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(120% 95% at 50% 40%, transparent 55%, hsl(var(--ph) 40% 4% / .75)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, .022) 0 1px, transparent 1px 3px); }
+.fbd { position: absolute; inset: 0; width: 100%; height: 100%; max-width: 100%; object-fit: cover; object-position: 60% 35%; }
+.fbg.has-img::before { content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, hsl(var(--ph) 30% 6% / .9) 0%, hsl(var(--ph) 30% 6% / .6) 38%, hsl(var(--ph) 30% 6% / .12) 72%),
+    linear-gradient(0deg, hsl(var(--ph) 30% 5% / .75), transparent 45%); }
+.fbg.has-img::after { z-index: 2; }
+.fbg.has-img .fwm { display: none; }
+.trailer.has-img { background: linear-gradient(90deg, hsl(var(--ph) 30% 6% / .85), hsl(var(--ph) 30% 6% / .25)), var(--tbd) 70% 40% / cover no-repeat; }
+.trailer.has-img::before { display: none; }
+.fwm { position: absolute; right: -2%; bottom: -6%; font-family: var(--wide); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125;
+  font-size: clamp(7rem, 24vw, 19rem); line-height: .8; letter-spacing: -.04em; white-space: nowrap; color: transparent;
+  -webkit-text-stroke: 1px rgba(238, 243, 241, .09); text-transform: uppercase; }
+.fstage { position: relative; display: grid; grid-template-rows: auto 1fr auto; min-width: 0; padding: 24px 28px 26px 92px; gap: 24px; }
+.fstage::before { content: ""; position: absolute; left: 56px; top: 24px; bottom: 24px; border-left: 1px solid var(--hero-line); }
+.fnav { display: flex; align-items: center; gap: 10px 28px; flex-wrap: wrap; min-height: 32px; }
+.fnav .menu { position: absolute; left: 44px; top: 28px; width: 24px; display: grid; gap: 5px; text-decoration: none; padding: 4px 0; }
+.fnav .menu i { display: block; height: 1.5px; background: var(--hero-ink); border-radius: 1px; }
+.fnav .menu i:last-child { width: 62%; }
+.fnav a, .fnav button { all: unset; cursor: pointer; font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .6875rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--hero-ink-2); }
+.fnav a:hover, .fnav button:hover { color: var(--hero-ink); }
+.fcopy { align-self: center; display: grid; gap: 18px; max-width: 34rem; min-width: 0; }
+.fcopy h1, .fcopy .ht { font-family: var(--wide); font-weight: 800; font-stretch: 125%; font-variation-settings: "wdth" 125; font-size: clamp(2.4rem, 6.4vw, 5.2rem);
+  line-height: .94; letter-spacing: -.035em; margin: 0; text-wrap: balance; overflow-wrap: anywhere; text-shadow: 0 2px 30px hsl(var(--ph) 40% 6% / .5); }
+.fcopy h1:focus { outline: none; }
+.flog { margin: 0; color: var(--hero-ink-2); font-size: var(--fs-sm); line-height: 1.7; max-width: 46ch; }
+.more { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 16px; font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112;
+  font-size: .6875rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--hero-ink); justify-self: start; }
+.more svg { transition: transform .2s ease; }
+.more:hover svg { transform: translateX(6px); }
+.fpager { display: grid; gap: 4px; min-height: 92px; }
+.fdots { position: absolute; left: 52px; bottom: 30px; display: grid; gap: 14px; }
+.fdots button { all: unset; cursor: pointer; width: 9px; height: 9px; border-radius: 50%; display: grid; place-items: center; }
+.fdots button i { width: 4px; height: 4px; border-radius: 50%; background: var(--hero-ink-3); transition: all .2s ease; }
+.fdots button[aria-pressed="true"] i { width: 8px; height: 8px; background: var(--hero-ink); box-shadow: 0 0 0 4px hsl(var(--ph) 40% 70% / .18); }
+.fpane { display: grid; gap: 3px; min-width: 0; }
+.fpane .no { font-family: var(--wide); font-size: .75rem; font-weight: 700; color: var(--hero-ink-3); letter-spacing: .1em; }
+.fpane .lb { font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .6875rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--hero-ink-2); }
+.fpane .vl { font-size: var(--fs-sm); color: var(--hero-ink); line-height: 1.5; overflow-wrap: anywhere; }
+.fpane .vl button { all: unset; cursor: pointer; border-bottom: 1px solid var(--hero-line); }
+.fpane .vl button:hover { border-color: var(--hero-ink-2); }
+.fpane .vl b { font-family: var(--mono); font-weight: 600; }
+.frail { position: relative; display: grid; grid-template-rows: 1fr auto; border-left: 1px solid var(--hero-line); min-width: 0;
+  background: hsl(var(--ph) 30% 8% / .32); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.frail .rh { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 22px 24px 18px; border-bottom: 1px solid var(--hero-line); }
+.frail .rh span { font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .6875rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--hero-ink-2); }
+.frail .rh b { font-family: var(--mono); font-size: 1.05rem; font-weight: 600; }
+.frail dl { margin: 0; padding: 20px 24px; display: grid; gap: 20px; align-content: start; }
+.frail dt { font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .625rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--hero-ink-3); margin-bottom: 5px; }
+.frail dd { margin: 0; font-size: var(--fs-sm); color: var(--hero-ink); line-height: 1.45; overflow-wrap: anywhere; }
+.frail dd button { all: unset; cursor: pointer; border-bottom: 1px solid var(--hero-line); }
+.frail dd button:hover { border-color: var(--hero-ink-2); }
+.trailer { position: relative; display: flex; align-items: center; gap: 12px; min-height: 108px; padding: 18px 20px; text-decoration: none; color: var(--hero-ink); overflow: hidden;
+  background: radial-gradient(80% 120% at 70% 30%, hsl(var(--ph) 40% 34%), hsl(var(--ph) 36% 10%)); border-top: 1px solid var(--hero-line); }
+.trailer::before { content: attr(data-wm); position: absolute; right: -6px; bottom: -14px; font-family: var(--wide); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125;
+  font-size: 4.2rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(238, 243, 241, .12); white-space: nowrap; text-transform: uppercase; }
+.trailer .play { position: relative; flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--hero-ink); color: hsl(var(--ph) 36% 12%); display: grid; place-items: center; transition: transform .2s ease; }
+.trailer:hover .play { transform: scale(1.08); }
+.trailer .tl { position: relative; font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .6875rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.trailer .tl small { display: block; font-family: var(--sans); font-size: .6875rem; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--hero-ink-2); margin-top: 2px; }
+.fhero a:focus-visible, .fhero button:focus-visible { outline: 2px solid var(--hero-gold); outline-offset: 3px; border-radius: 3px; }
+
+/* contender pages and the home hero reuse the film-page hero */
+.fkick { font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .6875rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--hero-gold); }
+.fcopy { gap: 14px; }
+.fcopy .ht button { all: unset; cursor: pointer; }
+.fcopy .ht button:hover { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 2px; }
+.frail dd a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--hero-line); }
+.frail dd a:hover { border-color: var(--hero-ink-2); }
+.frail dd .status { margin-left: 4px; }
+.fcol { display: grid; gap: 16px; min-width: 0; align-content: start; }
+.fgrid .panel h3 a { font-family: var(--sans); }
+.race .orow { grid-template-columns: 22px minmax(0, 1fr) minmax(70px, 34%) 44px; }
+.race .odds-head { grid-template-columns: 22px minmax(0, 1fr) minmax(70px, 34%) 44px; }
+.orow.me { background: color-mix(in srgb, var(--gold-ink) 12%, transparent); box-shadow: inset 3px 0 0 var(--gold-ink); border-radius: 4px; padding-inline: 4px 6px; }
+.hfigs { display: flex; gap: 14px 28px; flex-wrap: wrap; }
+.hfigs div { display: grid; }
+.hfigs b { font-family: var(--mono); font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 500; line-height: 1.05; letter-spacing: -.02em; }
+.hfigs span { font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .625rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--hero-ink-3); margin-top: 4px; }
+.fhero.home { grid-template-columns: minmax(0, 1fr) minmax(0, 340px); min-height: clamp(440px, 40vw, 520px); }
+.fhero.home .fnav { min-height: 24px; }
+.hrail { grid-template-rows: auto 1fr; }
+.frail .rh a { color: var(--hero-ink-2); font-size: var(--fs-xs); font-weight: 600; text-decoration: none; }
+.frail .rh a:hover { color: var(--hero-ink); text-decoration: underline; }
+.hrace { list-style: none; margin: 0; padding: 4px 0 10px; display: grid; align-content: start; }
+.hrace li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 6px 10px; align-items: center; padding: 11px 24px 10px; border-bottom: 1px solid var(--hero-line); }
+.hrace li:last-child { border-bottom: 0; }
+.hrace .no { font-family: var(--wide); font-size: .6875rem; font-weight: 700; color: var(--hero-ink-3); letter-spacing: .08em; }
+.hrace button { all: unset; cursor: pointer; display: grid; min-width: 0; }
+.hrace button:focus-visible { outline: 2px solid var(--hero-gold); outline-offset: 2px; }
+.hrace .t { font-weight: 600; font-size: var(--fs-sm); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hrace button:hover .t { text-decoration: underline; text-underline-offset: 3px; }
+.hrace .s { font-size: .6875rem; color: var(--hero-ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hrace b { font-family: var(--mono); font-weight: 600; font-size: var(--fs-sm); color: var(--hero-gold); }
+.hrace i { grid-column: 2 / -1; height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--hero-gold) var(--w), rgba(238, 243, 241, .12) var(--w)); }
+/* home slideshow: stacked stills crossfade; each carries its own hue */
+.hbg { position: absolute; inset: 0; z-index: -1; isolation: isolate; opacity: 0; transition: opacity .9s ease; pointer-events: none;
+  background: linear-gradient(180deg, hsl(var(--ph) 28% 17%), hsl(var(--ph) 34% 7%)); }
+.hbg.on { opacity: 1; }
+.fhero.home { transition: box-shadow .9s ease; }
+.fhero.home .frail { transition: background-color .9s ease; background: hsl(var(--ph) 30% 7% / .58); }
+.fhero.home .fnav { justify-content: space-between; }
+.hcopies { display: grid; align-self: center; min-width: 0; }
+.hcopies .fcopy { align-self: auto; }
+.hctl { display: inline-flex; align-items: center; gap: 6px; position: relative; padding-bottom: 6px; }
+.hctl button { all: unset; cursor: pointer; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; color: var(--hero-ink);
+  background: hsl(var(--ph) 30% 8% / .4); border: 1px solid rgba(238, 243, 241, .2); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.hctl button:hover { background: hsl(var(--ph) 30% 14% / .7); }
+.hctl button:focus-visible { outline: 2px solid var(--hero-gold); outline-offset: 2px; }
+.hcount { font-family: var(--mono); font-size: var(--fs-xs); color: var(--hero-ink-2); min-width: 4.6em; text-align: center; letter-spacing: .04em; }
+.hprog { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(238, 243, 241, .14); border-radius: 1px; overflow: hidden; }
+.hprog i { display: block; height: 100%; width: 100%; background: var(--hero-gold); transform-origin: left; animation: hprog 7s linear both; }
+.fhero.home.paused .hprog i, .fhero.home.hover .hprog i { animation-play-state: paused; }
+.fhero.home.paused .hprog { visibility: hidden; }
+@keyframes hprog { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.hrace li { transition: background-color .4s ease; }
+.hrace li.on { background: hsl(var(--ph) 40% 60% / .12); box-shadow: inset 2px 0 0 var(--hero-gold); }
+.hrace li.on .t { color: var(--hero-gold); }
+@media (prefers-reduced-motion: reduce) { .hbg, .hrace li { transition: none; } .hprog i { animation: none; } }
+@media (max-width: 860px) {
+  .fhero.home { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .fhero.home.has-img .hcopies { align-self: start; }
+  .fhero.home .fnav { flex-wrap: nowrap; gap: 10px; }
+  .fhero.home .fnav .fkick { font-size: .5625rem; }
+  .hrace li { padding-inline: 20px; }
+}
+
+/* season strip: the film's dated moments, like a showtimes date picker */
+.strip-wrap { background: var(--surface); border: 1px solid var(--rule-strong); border-radius: var(--r); padding: 14px 16px 12px; display: grid; gap: 10px; min-width: 0; }
+.strip-wrap h3 { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); font-weight: 700; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.strip-wrap h3 span { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.strip { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.day { flex: 0 0 auto; width: 128px; scroll-snap-align: start; border: 1px solid var(--rule); border-radius: 12px; padding: 9px 10px 10px; display: grid; gap: 2px; background: var(--surface-2); min-width: 0; }
+.day .m { font-size: .625rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
+.day .dd { font-family: var(--mono); font-size: 1.45rem; font-weight: 500; line-height: 1.1; }
+.day .dl { font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.day .ty { font-size: .625rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-top: 3px; }
+.day.win { background: var(--win-track); border-color: transparent; }
+.day.win .ty { color: var(--gold-ink); }
+.day.nom .ty { color: var(--nom); }
+.day.future { background: var(--surface); border-style: dashed; }
+.day.today { background: var(--ink); border-color: var(--ink); color: var(--bg); width: 92px; place-content: center; text-align: center; }
+.day.today .m, .day.today .dl { color: var(--bg); opacity: .8; }
+
+.fgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px; align-items: start; }
+.fgrid .panel h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; }
+.fgrid .panel h3 small { font-family: var(--sans); font-size: var(--fs-sm); color: var(--ink-3); font-weight: 500; }
+.fgrid .panel + .panel { margin: 0; }
+.fgrid .chart { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.fgrid .chart-t { font-size: var(--fs-xs); color: var(--ink-3); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--rule); }
+.fgrid .chart-t + .chart { margin-top: 6px; padding-top: 0; border-top: 0; }
+
+@media (max-width: 860px) {
+  .fhero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .fstage { padding: 20px 20px 24px 64px; min-height: 440px; }
+  .fstage::before { left: 34px; }
+  .fnav .menu { left: 23px; top: 24px; }
+  .fdots { left: 30px; }
+  .frail { border-left: 0; border-top: 1px solid var(--hero-line); grid-template-rows: auto auto; }
+  .frail dl { padding: 16px 20px; gap: 14px 20px; }
+  .trailer { min-height: 0; padding: 14px 20px; }
+  .fstage { min-height: 0 !important; gap: 20px; }
+  .fsum { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fout { grid-template-columns: minmax(0, 1fr); }
+  .frail dl { grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
+}
+@media (max-width: 860px) {
+  /* phones: the still becomes a clear 16:9 banner that fades into the hero, title just below it */
+  .fbg.has-img .fbd { inset: 0 0 auto 0; height: auto; aspect-ratio: 16 / 9; object-position: center;
+    -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 100%); mask-image: linear-gradient(180deg, #000 62%, transparent 100%); }
+  .fbg.has-img::before { background: linear-gradient(180deg, hsl(var(--ph) 30% 6% / .6) 0, transparent 84px); }
+  .fbg.has-img::after { background: repeating-linear-gradient(0deg, rgba(255, 255, 255, .02) 0 1px, transparent 1px 3px); }
+  .fhero.has-img .fcopy { align-self: start; padding-top: max(40px, calc((100vw - 34px) * .5625 - 120px)); }
+  .fhero.has-img .fcopy h1 { text-shadow: 0 2px 18px hsl(var(--ph) 40% 4% / .9), 0 0 2px hsl(var(--ph) 40% 4% / .6); }
+  .trailer.has-img { background: radial-gradient(80% 120% at 70% 30%, hsl(var(--ph) 40% 30%), hsl(var(--ph) 36% 10%)); }
+  .frail { background: hsl(var(--ph) 30% 8% / .55); }
+}
+/* ---------- cleanup pass: quieter heroes, roomier rows, phone fixes ---------- */
+.two { align-items: start; }
+.fstage { padding: 26px 32px 30px; gap: 20px; grid-template-rows: auto 1fr; }
+.fstage::before { display: none; }
+.fhero { min-height: clamp(340px, 34vw, 430px); }
+.fhero.home { min-height: clamp(380px, 36vw, 470px); }
+.fnav { justify-content: space-between; }
+.fback { all: unset; cursor: pointer; font-size: var(--fs-sm); font-weight: 600; color: var(--hero-ink-2); }
+.fback:hover { color: var(--hero-ink); text-decoration: underline; text-underline-offset: 3px; }
+.fhero .fnav .fkick { color: var(--hero-ink-3); }
+.fpeople { margin: 0; font-size: var(--fs-sm); color: var(--hero-ink); line-height: 1.6; max-width: 46ch; }
+.fpeople span { font-family: var(--wide); font-stretch: 112%; font-variation-settings: "wdth" 112; font-size: .625rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--hero-ink-3); margin-right: 6px; }
+.fpeople button { all: unset; cursor: pointer; border-bottom: 1px solid var(--hero-line); }
+.fpeople button:hover { border-color: var(--hero-ink-2); }
+.fhero .fwm { -webkit-text-stroke-color: rgba(238, 243, 241, .06); }
+.card .odds-head, .card .orow { grid-template-columns: 16px minmax(0, 1fr) minmax(52px, 24%) 34px; gap: 8px; }
+.card .odds-head { letter-spacing: .06em; }
+.card .bar .v { width: 2.9em; }
+.fxc { border-color: transparent; background: var(--surface-2); }
+.fxc:hover { border-color: var(--rule-strong); }
+.upd-m { display: none; }
+@media (max-width: 600px) {
+  .live { display: none; }
+  .upd-m { display: inline; }
+  .brand-name { font-size: 1.3rem; }
+  .mast-row { padding-block: 10px 6px; }
+}
+@media (max-width: 760px) {
+  .tablewrap th:nth-child(5), .tablewrap td:nth-child(5),
+  .tablewrap th:nth-child(7), .tablewrap td:nth-child(7),
+  .tablewrap th:nth-child(8), .tablewrap td:nth-child(8) { display: none; }
+  .tablewrap th:nth-child(6), .tablewrap td:nth-child(6) { display: none; }
+  .tablewrap .who .n .t, .tablewrap .who .s { white-space: normal; }
+  td .bar { min-width: 64px; }
+  tr.field td { white-space: normal; }
+  thead th { white-space: normal; letter-spacing: .04em; }
+  th, td { padding: 9px 8px; }
+  .fhero.home .fnav > .fkick { display: none; }
+  .fhero.home .fnav { justify-content: flex-end; }
+  .hfigs { gap: 12px 20px; }
+  .rub .tablewrap th, .rub .tablewrap td { display: table-cell; }
+}
+@media (max-width: 860px) {
+  .fstage { padding: 20px 20px 24px; }
+}
+
+@media (max-width: 480px) {
+  .fsum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fsum > div { padding: 12px 14px; }
+  .fsum .v { font-size: 1.45rem; }
+  .fstage { padding-left: 52px; padding-right: 16px; }
+  .fstage::before { left: 26px; }
+  .fnav .menu { left: 15px; }
+  .fdots { left: 22px; }
+  .fnav { gap: 8px 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fcopy { animation: rise .5s ease-out both; }
+  .fwm { animation: drift 1.2s ease-out both; }
+  @keyframes rise { from { transform: translateY(8px); opacity: .5; } to { transform: none; opacity: 1; } }
+  @keyframes drift { from { transform: translateX(3%); opacity: 0; } to { transform: none; opacity: 1; } }
+}
+
+/* film pages take on the film's own color: the whole page joins the hero's dark, single-hue world */
+:root.filmmode {
+  --bg: hsl(var(--ph) 20% 6%); --surface: hsl(var(--ph) 18% 9%); --surface-2: hsl(var(--ph) 17% 12%);
+  --ink: #EEF1EE; --ink-2: hsl(var(--ph) 10% 74%); --ink-3: hsl(var(--ph) 8% 57%);
+  --rule: hsl(var(--ph) 14% 16%); --rule-strong: hsl(var(--ph) 14% 22%);
+  --nom: hsl(var(--ph) 32% 66%); --nom-track: hsl(var(--ph) 16% 18%);
+  --win: #CF9F4A; --win-track: hsl(38 32% 15%); --gold-ink: #E3BD70;
+  --good: #7CC79A; --good-wash: hsl(150 25% 13%); --bad: #E8918A; --bad-wash: hsl(5 28% 14%);
+  --focus: #E3BD70; --mark: hsl(var(--ph) 24% 15%);
+  --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 28px -18px rgba(0, 0, 0, .8);
+  color-scheme: dark;
+}
+:root.filmmode .panel, :root.filmmode .strip-wrap { background: color-mix(in srgb, var(--surface) 82%, transparent); }
+:root.filmmode .day.today { background: var(--gold-ink); border-color: var(--gold-ink); color: hsl(var(--ph) 20% 8%); }
+:root.filmmode .day.today .m, :root.filmmode .day.today .dl { color: hsl(var(--ph) 20% 8%); }
+:root.filmmode body { background: radial-gradient(90% 60% at 50% 0%, hsl(var(--ph) 26% 11%), transparent 70%) no-repeat, var(--bg); }
+
+</style>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-row">
+      <a class="brand" href="#forecast" aria-label="Oscars 2027 Forecast, home">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+          <rect x="0.5" y="0.5" width="33" height="33" rx="8" fill="var(--mark)"/>
+          <path fill="var(--win)" d="M12 8h10v5.6a5 5 0 0 1-10 0V8Zm-3.6 1.2h2.6v4.1a3 3 0 0 1-2.6-2.9V9.2Zm14.6 0h2.6v1.2a3 3 0 0 1-2.6 2.9V9.2ZM15.9 19.4h2.2v3.6h-2.2v-3.6Zm-3 4.4h8.2v1.7h-8.2v-1.7Zm-1.2 2.4h10.6V28H11.7v-1.8Z"/>
+        </svg>
+        <div>
+          <div class="brand-name">Oscars <i>2027</i> Forecast</div>
+          <div class="brand-sub">99th Academy Awards · Sunday, March 14, 2027<span class="upd-m"></span></div>
+        </div>
+      </a>
+      <span class="live" id="live"><span class="dot" aria-hidden="true"></span><span class="t">Connecting…</span></span>
+    </div>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#forecast" data-tab="forecast" aria-current="page">Forecast</a>
+      <a href="#nominations" data-tab="nominations">Nominations</a>
+      <a href="#awards" data-tab="awards">Awards won</a>
+      <a href="#films" data-tab="films">Films</a>
+      <a href="#festivals" data-tab="festivals">Festivals</a>
+      <a href="#precursors" data-tab="precursors">Precursors</a>
+      <a href="#buzz" data-tab="buzz">News &amp; buzz</a>
+      <a href="#method" data-tab="method">How it works</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app" class="wrap">
+  <div class="state-box">
+    <span class="eyebrow">Loading the live forecast</span>
+    <h2>Odds for all 24 categories</h2>
+    <p>Nomination and win odds for every Oscar race, rebuilt each morning from festival prizes, precursor awards, box office and campaign news.</p>
+    <div class="skel" style="width:72%"></div><div class="skel" style="width:54%"></div><div class="skel" style="width:63%"></div>
+    <p class="tpl-note"><strong>This is the page template, not the finished site.</strong> Open <code>index.html</code> in the main folder instead, or run <code>python3 build.py</code> to rebuild it.</p>
+  </div>
+</main>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dtitle" hidden></aside>
+
+<script>
+/* Oscars 2027 Forecast — prediction model.
+   Pure functions; runs in the browser (window.OscarModel) and in Node (module.exports). */
+(function (root) {
+  "use strict";
+
+  var CATS = [
+    { key: "picture", name: "Best Picture", short: "Picture", slots: 10, group: "top", cov: 0.96, floor: 45 },
+    { key: "director", name: "Best Director", short: "Director", slots: 5, group: "top", cov: 0.95, floor: 45 },
+    { key: "actor", name: "Best Actor", short: "Actor", slots: 5, group: "acting", cov: 0.95, floor: 45 },
+    { key: "actress", name: "Best Actress", short: "Actress", slots: 5, group: "acting", cov: 0.95, floor: 45 },
+    { key: "supactor", name: "Best Supporting Actor", short: "Supporting Actor", slots: 5, group: "acting", cov: 0.94, floor: 45 },
+    { key: "supactress", name: "Best Supporting Actress", short: "Supporting Actress", slots: 5, group: "acting", cov: 0.94, floor: 45 },
+    { key: "origscreenplay", name: "Best Original Screenplay", short: "Original Screenplay", slots: 5, group: "writing", cov: 0.93, floor: 45 },
+    { key: "adaptscreenplay", name: "Best Adapted Screenplay", short: "Adapted Screenplay", slots: 5, group: "writing", cov: 0.93, floor: 45 },
+    { key: "international", name: "Best International Feature", short: "International", slots: 5, group: "feature", cov: 0.92, floor: 45 },
+    { key: "animated", name: "Best Animated Feature", short: "Animated", slots: 5, group: "feature", cov: 0.9, floor: 45 },
+    { key: "documentary", name: "Best Documentary Feature", short: "Documentary", slots: 5, group: "feature", cov: 0.85, floor: 50 },
+    { key: "cinematography", name: "Best Cinematography", short: "Cinematography", slots: 5, group: "craft", cov: 0.92, floor: 45 },
+    { key: "editing", name: "Best Film Editing", short: "Film Editing", slots: 5, group: "craft", cov: 0.92, floor: 45 },
+    { key: "production", name: "Best Production Design", short: "Production Design", slots: 5, group: "craft", cov: 0.92, floor: 45 },
+    { key: "costume", name: "Best Costume Design", short: "Costume Design", slots: 5, group: "craft", cov: 0.92, floor: 45 },
+    { key: "makeup", name: "Best Makeup and Hairstyling", short: "Makeup & Hair", slots: 5, group: "craft", cov: 0.88, floor: 45 },
+    { key: "sound", name: "Best Sound", short: "Sound", slots: 5, group: "craft", cov: 0.9, floor: 45 },
+    { key: "vfx", name: "Best Visual Effects", short: "Visual Effects", slots: 5, group: "craft", cov: 0.9, floor: 45 },
+    { key: "casting", name: "Best Casting", short: "Casting", slots: 5, group: "craft", cov: 0.92, floor: 45 },
+    { key: "score", name: "Best Original Score", short: "Score", slots: 5, group: "music", cov: 0.88, floor: 45 },
+    { key: "song", name: "Best Original Song", short: "Song", slots: 5, group: "music", cov: 0.8, floor: 52 },
+    { key: "docshort", name: "Best Documentary Short", short: "Documentary Short", slots: 5, group: "short", cov: 0.3, floor: 60 },
+    { key: "liveshort", name: "Best Live Action Short", short: "Live Action Short", slots: 5, group: "short", cov: 0.4, floor: 60 },
+    { key: "animshort", name: "Best Animated Short", short: "Animated Short", slots: 5, group: "short", cov: 0.4, floor: 60 }
+  ];
+  var CAT = {};
+  CATS.forEach(function (c) { CAT[c.key] = c; });
+
+  // How much a film's Metacritic score moves each category (reviews matter most up top).
+  var CRITICS_WEIGHT = {
+    picture: 1, director: 0.9, origscreenplay: 0.9, adaptscreenplay: 0.9,
+    actor: 0.6, actress: 0.6, supactor: 0.6, supactress: 0.6,
+    animated: 0.8, international: 0.8, documentary: 0.8,
+    editing: 0.5, cinematography: 0.35, production: 0.35, costume: 0.35, makeup: 0.35,
+    sound: 0.35, vfx: 0.35, casting: 0.4, score: 0.3, song: 0.2,
+    docshort: 0, liveshort: 0, animshort: 0
+  };
+  var DEFAULTS = {
+    nominations: "2027-01-21",
+    ceremony: "2027-03-14",
+    tauMin: 3.5, tauMax: 7.5, tauDays: 100,   // nomination spread narrows as Jan 21 nears
+    tMin: 3.5, tMax: 10, tDays: 150,           // win spread narrows as Mar 14 nears
+    criticsPivot: 72, criticsK: 0.3, criticsCap: 7
+  };
+
+  function dayNum(d) {
+    if (typeof d === "number") return d;
+    if (!d) return NaN;
+    return Math.round(Date.parse(String(d).slice(0, 10) + "T12:00:00Z") / 86400000);
+  }
+  function isoFromDay(n) { return new Date(n * 86400000).toISOString().slice(0, 10); }
+  function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+  function sigmoid(x) { return 1 / (1 + Math.exp(-x)); }
+
+  function latestAt(arr, day) {
+    var best = null, bestDay = -Infinity;
+    if (!Array.isArray(arr)) return null;
+    for (var i = 0; i < arr.length; i++) {
+      var e = arr[i]; if (!e) continue;
+      var dd = dayNum(e.d);
+      if (dd <= day && dd >= bestDay) { best = e; bestDay = dd; }
+    }
+    return best;
+  }
+
+  function indexSignals(signals) {
+    var byTarget = {};
+    Object.keys(signals || {}).forEach(function (sid) {
+      var s = signals[sid]; if (!s || !s.fx) return;
+      Object.keys(s.fx).forEach(function (cid) {
+        (byTarget[cid] = byTarget[cid] || []).push(sid);
+      });
+    });
+    return byTarget;
+  }
+
+  function signalEffect(sig, cid, day) {
+    var raw = Number(sig.fx && sig.fx[cid]) || 0;
+    var sd = dayNum(sig.date);
+    if (!(sd <= day)) return 0;
+    var hl = Number(sig.hl) || 0;
+    if (hl > 0) return raw * Math.pow(0.5, (day - sd) / hl);
+    return raw;
+  }
+
+  function criticsEffect(film, cat, day, params) {
+    if (!film) return 0;
+    var e = latestAt(film.mc, day);
+    if (!e || typeof e.v !== "number") return 0;
+    var w = CRITICS_WEIGHT[cat] != null ? CRITICS_WEIGHT[cat] : 0.35;
+    return clamp((e.v - params.criticsPivot) * params.criticsK, -params.criticsCap, params.criticsCap) * w;
+  }
+
+  // Strength = baseline (pundit consensus & profile) + every recorded signal + reviews.
+  function strength(cid, c, data, idx, day, params, withItems) {
+    var b = latestAt(c.base, day);
+    if (!b) return null;
+    var parts = { base: Number(b.v) || 0, festival: 0, precursor: 0, pr: 0, academy: 0, critics: 0 };
+    var items = withItems ? [] : null;
+    (idx[cid] || []).forEach(function (sid) {
+      var sig = data.signals[sid];
+      var eff = signalEffect(sig, cid, day);
+      if (!eff && dayNum(sig.date) > day) return;
+      var k = parts.hasOwnProperty(sig.kind) && sig.kind !== "base" && sig.kind !== "critics" ? sig.kind : "pr";
+      parts[k] += eff;
+      if (items) items.push({ id: sid, eff: eff, raw: Number(sig.fx[cid]) || 0 });
+    });
+    parts.critics = criticsEffect(data.films[c.film], c.cat, day, params);
+    var s = parts.base + parts.festival + parts.precursor + parts.pr + parts.academy + parts.critics;
+    return { s: s, parts: parts, items: items, baseEntry: b };
+  }
+
+  function statusAt(c, day) {
+    var e = latestAt(c.st, day);
+    return e ? e.v : "contender";
+  }
+
+  function solveTheta(ss, target, tau) {
+    var lo = Math.min.apply(null, ss) - 60, hi = Math.max.apply(null, ss) + 60;
+    for (var it = 0; it < 70; it++) {
+      var mid = (lo + hi) / 2, sum = 0;
+      for (var i = 0; i < ss.length; i++) sum += sigmoid((ss[i] - mid) / tau);
+      if (sum > target) lo = mid; else hi = mid;
+    }
+    return (lo + hi) / 2;
+  }
+
+  function spreads(day, params) {
+    var dn = dayNum(params.nominations) - day, dc = dayNum(params.ceremony) - day;
+    return {
+      tau: params.tauMin + (params.tauMax - params.tauMin) * clamp(dn / params.tauDays, 0, 1),
+      T: params.tMin + (params.tMax - params.tMin) * clamp(dc / params.tDays, 0, 1),
+      daysToNoms: dn, daysToCeremony: dc
+    };
+  }
+
+  /* data = { contenders:{id:doc}, films:{id:doc}, signals:{id:doc}, meta:{...} }
+     asOf = 'YYYY-MM-DD' or day number. Returns per-category rows with pNom / pWin. */
+  function forecast(data, asOf, opts) {
+    opts = opts || {};
+    var params = Object.assign({}, DEFAULTS, (data.meta && data.meta.model) || {});
+    if (data.meta && data.meta.nominations) params.nominations = data.meta.nominations;
+    if (data.meta && data.meta.ceremony) params.ceremony = data.meta.ceremony;
+    var day = dayNum(asOf);
+    var idx = opts.idx || indexSignals(data.signals);
+    var sp = spreads(day, params);
+    var catOverrides = (data.meta && data.meta.cats) || {};
+    var out = { day: day, iso: isoFromDay(day), tau: sp.tau, T: sp.T, daysToNoms: sp.daysToNoms, daysToCeremony: sp.daysToCeremony, cats: {}, films: {} };
+
+    var byCat = {};
+    Object.keys(data.contenders || {}).forEach(function (cid) {
+      var c = data.contenders[cid];
+      if (!c || !CAT[c.cat]) return;
+      var st = strength(cid, c, data, idx, day, params, !!opts.items);
+      if (!st) return;
+      (byCat[c.cat] = byCat[c.cat] || []).push({ id: cid, c: c, s: st.s, parts: st.parts, items: st.items, status: statusAt(c, day) });
+    });
+
+    CATS.forEach(function (cat) {
+      var over = catOverrides[cat.key] || {};
+      var slots = over.slots || cat.slots, cov = over.cov != null ? over.cov : cat.cov, floor = over.floor != null ? over.floor : cat.floor;
+      var rows = byCat[cat.key] || [];
+      var hasNominees = rows.some(function (r) { return r.status === "nominee" || r.status === "winner"; });
+      var hasWinner = rows.some(function (r) { return r.status === "winner"; });
+      var hasShortlist = rows.some(function (r) { return r.status === "shortlisted"; });
+      var mode = hasWinner ? "final" : hasNominees ? "nominees" : hasShortlist ? "shortlist" : "open";
+      var live = rows.filter(function (r) {
+        if (r.status === "out" || r.status === "withdrawn") return false;
+        if (mode === "nominees" || mode === "final") return r.status === "nominee" || r.status === "winner";
+        if (mode === "shortlist") return r.status === "shortlisted";
+        return true;
+      });
+      rows.forEach(function (r) { r.pNom = 0; r.pWin = 0; r.live = live.indexOf(r) >= 0; });
+      var field = { noms: 0, win: 0 }, theta = null;
+
+      if (mode === "nominees" || mode === "final") {
+        live.forEach(function (r) { r.pNom = 1; });
+      } else if (live.length) {
+        var target = mode === "shortlist" ? Math.min(slots, live.length) : slots * cov;
+        var ss = live.map(function (r) { return r.s; });
+        if (live.length <= target) {
+          theta = mode === "shortlist" ? -Infinity : floor;
+        } else {
+          theta = solveTheta(ss, target, sp.tau);
+          if (mode !== "shortlist") theta = Math.max(theta, floor);
+        }
+        var sum = 0;
+        live.forEach(function (r) {
+          r.pNom = theta === -Infinity ? 1 : sigmoid((r.s - theta) / sp.tau);
+          sum += r.pNom;
+        });
+        field.noms = mode === "shortlist" ? 0 : Math.max(0, slots - sum);
+      } else {
+        field.noms = slots;
+      }
+
+      // Win odds: nominated-weighted softmax on strength.
+      if (mode === "final") {
+        live.forEach(function (r) { r.pWin = r.status === "winner" ? 1 : 0; });
+      } else {
+        var ref = live.length ? Math.max.apply(null, live.map(function (r) { return r.s; })) : 0;
+        var tot = 0;
+        live.forEach(function (r) { r.w = r.pNom * Math.exp((r.s - ref) / sp.T); tot += r.w; });
+        var fw = 0;
+        if (field.noms > 0) {
+          var fs = (theta != null && isFinite(theta) ? theta : floor) - 8;
+          fw = field.noms * Math.exp((fs - ref) / sp.T);
+        }
+        var all = tot + fw;
+        live.forEach(function (r) { r.pWin = all > 0 ? r.w / all : 0; delete r.w; });
+        field.win = all > 0 ? fw / all : 0;
+      }
+
+      rows.sort(function (a, b) {
+        if (b.pNom !== a.pNom) return b.pNom - a.pNom;
+        if (b.pWin !== a.pWin) return b.pWin - a.pWin;
+        return b.s - a.s;
+      });
+      rows.forEach(function (r, i) { r.rank = i + 1; });
+      out.cats[cat.key] = { cat: cat, slots: slots, mode: mode, rows: rows, field: field, theta: theta };
+
+      rows.forEach(function (r) {
+        var f = out.films[r.c.film] || (out.films[r.c.film] = { expNoms: 0, expWins: 0, cats: [] });
+        f.expNoms += r.pNom; f.expWins += r.pWin;
+        f.cats.push({ cat: cat.key, id: r.id, pNom: r.pNom, pWin: r.pWin });
+      });
+    });
+    return out;
+  }
+
+  var api = {
+    CATS: CATS, CAT: CAT, CRITICS_WEIGHT: CRITICS_WEIGHT, DEFAULTS: DEFAULTS,
+    dayNum: dayNum, isoFromDay: isoFromDay, latestAt: latestAt, indexSignals: indexSignals,
+    signalEffect: signalEffect, criticsEffect: criticsEffect, strength: strength, forecast: forecast, spreads: spreads
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+  else root.OscarModel = api;
+})(typeof window !== "undefined" ? window : this);
+
+</script>
+<script>
+(function () {
+  "use strict";
+  var M = window.OscarModel, CATS = M.CATS, CAT = M.CAT;
+  var COLLS = ["contenders", "films", "signals", "festivals", "precursors"];
+  var TABS = ["forecast", "nominations", "awards", "films", "festivals", "precursors", "buzz", "method"];
+  var S = { meta: null, contenders: {}, films: {}, signals: {}, festivals: {}, precursors: {}, got: {}, status: "loading" };
+  var V = { tab: "forecast", cat: null, film: null, group: "all", agroup: "all", buzz: "all", drawer: null, opener: null, filmsAll: false, boardAll: false, tallyAll: false };
+  var FC = null, PREV = null, ROW = {}, PROWS = {}, IDX = null, HIST = new Map();
+  var AW = { byC: {}, byF: {}, n: 0 };
+  var ver = 0, doneVer = -1, doneDay = null, timer = null;
+  var GROUPS = [["all", "All"], ["top", "Picture & directing"], ["acting", "Acting"], ["writing", "Writing"], ["feature", "Features"], ["craft", "Crafts"], ["music", "Music"], ["short", "Shorts"]];
+  var PERSON = { director: 1, actor: 1, actress: 1, supactor: 1, supactress: 1 };
+  var FILMCAT = { picture: 1, international: 1, animated: 1, documentary: 1, docshort: 1, liveshort: 1, animshort: 1 };
+  var KIND = { festival: "Festival", precursor: "Precursor", pr: "Buzz", academy: "Academy" };
+  var RESULT = { win: "Won", "runner-up": "Runner-up", nom: "Nominated", honor: "Honor" };
+  // Awards tab groups: chip key, label, Oscar categories shown
+  var AGROUPS = [["all", "All", null], ["picture", "Best Picture", ["picture"]], ["director", "Director", ["director"]],
+    ["acting", "Acting", ["actor", "actress", "supactor", "supactress"]], ["writing", "Writing", ["origscreenplay", "adaptscreenplay"]],
+    ["feature", "Features", ["international", "animated", "documentary"]],
+    ["craft", "Crafts & music", ["cinematography", "editing", "production", "costume", "makeup", "sound", "vfx", "casting", "score", "song"]],
+    ["short", "Shorts", ["docshort", "liveshort", "animshort"]]];
+
+  try { var g = localStorage.getItem("of.group"); if (g && GROUPS.some(function (x) { return x[0] === g; })) V.group = g; } catch (e) { /* storage blocked */ }
+  try { var ag = localStorage.getItem("of.agroup"); if (ag && AGROUPS.some(function (x) { return x[0] === ag; })) V.agroup = ag; } catch (e) { /* storage blocked */ }
+
+  // ------------------------------------------------------------ helpers
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function safeUrl(u) { try { var x = new URL(u); return x.protocol === "https:" || x.protocol === "http:" ? x.href : null; } catch (e) { return null; } }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function todayISO() { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function daysUntil(iso) { return M.dayNum(iso) - M.dayNum(todayISO()); }
+  function pct(p) {
+    if (p == null || isNaN(p)) return "–";
+    if (p >= 1) return "100%"; if (p >= 0.995) return ">99%";
+    if (p > 0 && p < 0.005) return "<1%";
+    return Math.round(p * 100) + "%";
+  }
+  function signed(x, d) {
+    d = d == null ? 1 : d; var v = Number(x) || 0, r = Math.round(v * Math.pow(10, d)) / Math.pow(10, d);
+    return (r > 0 ? "+" : r < 0 ? "−" : "±") + Math.abs(r).toFixed(d);
+  }
+  function dt(iso) { return new Date(String(iso).slice(0, 10) + "T12:00:00"); }
+  function fmtDay(iso, year) {
+    if (!iso) return "TBA";
+    return dt(iso).toLocaleDateString(undefined, year ? { month: "short", day: "numeric", year: "numeric" } : { month: "short", day: "numeric" });
+  }
+  function fmtLong(iso) { return dt(iso).toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", year: "numeric" }); }
+  function fmtStamp(s) {
+    var d = new Date(s); if (isNaN(d)) return "";
+    return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  }
+  function range(a, b) {
+    if (!a) return "Dates TBA";
+    if (!b || a === b) return fmtDay(a);
+    var da = dt(a), db = dt(b);
+    if (da.getMonth() === db.getMonth()) return fmtDay(a) + "–" + db.getDate();
+    return fmtDay(a) + " – " + fmtDay(b);
+  }
+  function plural(n, w) { return n + " " + w + (n === 1 ? "" : "s"); }
+  var TROPHY = '<svg class="trophy" width="11" height="13" viewBox="0 0 11 13" aria-hidden="true"><path fill="currentColor" d="M2.5 0h6v3.6A3 3 0 0 1 5.5 6.6a3 3 0 0 1-3-3V0ZM0 .8h1.8v2.6A1.9 1.9 0 0 1 0 1.8V.8Zm9.2 0H11v1a1.9 1.9 0 0 1-1.8 1.6V.8ZM4.8 7.2h1.4v2.4H4.8V7.2ZM2.9 10h5.2v1.1H2.9V10Zm-.8 1.7h6.8V13H2.1v-1.3Z"/></svg>';
+  var ARROW = '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+  var MEDAL = '<svg class="medal" width="10" height="13" viewBox="0 0 10 13" aria-hidden="true"><path fill="currentColor" d="M.8 0h3l2.1 4.3H2.9L.8 0Zm8.4 0h-3L4.9 2.7l1.6 1.6L9.2 0Z"/><circle cx="5" cy="8.6" r="4" fill="currentColor"/><circle cx="5" cy="8.6" r="2.2" fill="none" stroke="var(--surface)" stroke-width=".9"/></svg>';
+
+  function filmOf(c) { return S.films[c.film] || { title: c.film }; }
+  function subOf(c) {
+    if (PERSON[c.cat] || c.cat === "song") return c.sub || filmOf(c).title;
+    return c.sub || filmOf(c).dist || "";
+  }
+  function sourceLink(sig) {
+    var u = safeUrl(sig.source); if (!u) return sig.outlet ? '<span class="src">' + esc(sig.outlet) + "</span>" : "";
+    return '<span class="src">Source: <a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(sig.outlet || new URL(u).hostname) + "</a></span>";
+  }
+  function metric(cat) { var m = FC.cats[cat].mode; return m === "nominees" || m === "final" ? "pWin" : "pNom"; }
+  function delta(id) {
+    if (!PREV) return null; var r = ROW[id]; if (!r) return null;
+    var p = PROWS[id]; if (!p) return "new";
+    var k = metric(r.c.cat); return r[k] - p[k];
+  }
+  function deltaHtml(d) {
+    if (d == null) return '<span class="delta flat">–</span>';
+    if (d === "new") return '<span class="delta flat">new</span>';
+    var v = Math.round(d * 100);
+    if (v === 0) return '<span class="delta flat">0</span>';
+    return '<span class="delta ' + (v > 0 ? "up" : "down") + '">' + (v > 0 ? "▲ +" : "▼ −") + Math.abs(v) + "</span>";
+  }
+  function statusChip(st) {
+    if (!st || st === "contender") return "";
+    var lbl = { nominee: "Nominee", winner: "Winner", shortlisted: "Shortlisted", out: "Out", withdrawn: "Withdrawn" }[st] || st;
+    return '<span class="status ' + esc(st) + '">' + esc(lbl) + "</span>";
+  }
+  function modeText(mode, cat) {
+    if (mode === "final") return "Winner announced";
+    if (mode === "nominees") return "Nominees announced · predicting the winner";
+    if (mode === "shortlist") return "Shortlist announced · predicting nominations";
+    return "Predicting " + cat.slots + " nominees";
+  }
+
+  // ------------------------------------------------------------ data
+  // Inside Claude the page reads the live database. Anywhere else (GitHub Pages, a local
+  // server) it falls back to a data.json snapshot published next to the page.
+  function connect() {
+    var c = window.claude;
+    S.inClaude = !!(c && typeof c.use === "function");
+    if (!S.inClaude) { loadSnapshot(); return; }
+    c.use("db").then(function (db) {
+      if (!db) { loadSnapshot(); return; }
+      try {
+        db.doc("meta/site").onSnapshot(function (snap) {
+          S.meta = snap.exists ? snap.data() : null; S.got.meta = true; changed();
+        }, onErr);
+        COLLS.forEach(function (name) {
+          db.collection(name).limit(1000).onSnapshot(function (snap) {
+            var o = {}; snap.docs.forEach(function (d) { o[d.id] = d.data(); });
+            S[name] = o; S.got[name] = true; changed();
+          }, onErr);
+        });
+      } catch (e) { onErr(e); }
+    }, function () { loadSnapshot(); });
+  }
+  // Prefer data.json (it can be refreshed without rebuilding the page); fall back to the copy
+  // built into the page, which also covers opening index.html straight from disk.
+  function embeddedSnapshot() {
+    var el = document.getElementById("snapshot");
+    if (!el) return null;
+    try { var d = JSON.parse(el.textContent); return d && d.contenders ? d : null; } catch (e) { return null; }
+  }
+  function useSnapshot(d) {
+    S.meta = (d.meta && d.meta.site) || null; S.got.meta = true;
+    COLLS.forEach(function (n) { S[n] = d[n] && typeof d[n] === "object" ? d[n] : {}; S.got[n] = true; });
+    S.status = "snapshot"; changed();
+  }
+  function loadSnapshot() {
+    function fallback() { var e = embeddedSnapshot(); if (e) useSnapshot(e); else { S.status = "unavailable"; render(); } }
+    if (typeof fetch !== "function" || location.protocol === "file:") { fallback(); return; }
+    fetch("data.json", { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function (d) {
+      if (!d || typeof d !== "object" || !d.contenders) throw new Error("bad snapshot");
+      useSnapshot(d);
+    }).catch(fallback);
+  }
+  function onErr() { if (S.status !== "live") { S.status = "error"; render(); } }
+  function changed() {
+    ver++;
+    if (S.status !== "snapshot" && S.got.meta && COLLS.every(function (n) { return S.got[n]; })) S.status = "live";
+    clearTimeout(timer); timer = setTimeout(render, 40);
+  }
+  function hasData() { return Object.keys(S.contenders).length > 0; }
+
+  function compute() {
+    var today = todayISO();
+    if (doneVer === ver && doneDay === today && FC) return;
+    var data = { contenders: S.contenders, films: S.films, signals: S.signals, meta: S.meta || {} };
+    IDX = M.indexSignals(S.signals);
+    FC = M.forecast(data, today, { idx: IDX, items: true });
+    ROW = {}; Object.keys(FC.cats).forEach(function (k) { FC.cats[k].rows.forEach(function (r) { ROW[r.id] = r; }); });
+    var since = (S.meta && S.meta.trackingSince) || today;
+    var prevDay = Math.max(M.dayNum(today) - 7, M.dayNum(since));
+    PREV = null; PROWS = {};
+    if (prevDay < M.dayNum(today)) {
+      PREV = M.forecast(data, prevDay, { idx: IDX });
+      Object.keys(PREV.cats).forEach(function (k) { PREV.cats[k].rows.forEach(function (r) { PROWS[r.id] = r; }); });
+    }
+    HIST = new Map(); buildAwards(); doneVer = ver; doneDay = today;
+  }
+
+  // Who won what: every signal's `awards` list, indexed by contender and by film.
+  function buildAwards() {
+    var byC = {}, byF = {}, n = 0, all = [];
+    function push(o, k, rec) { (o[k] = o[k] || []).push(rec); }
+    Object.keys(S.signals).forEach(function (sid) {
+      var s = S.signals[sid], list = Array.isArray(s.awards) ? s.awards : [];
+      list.forEach(function (a) {
+        if (!a || typeof a.aw !== "string" || !a.aw) return;
+        var to = Array.isArray(a.to) ? a.to.filter(function (x) { return typeof x === "string"; }) : [];
+        var own = typeof a.src === "string" && a.src;
+        var rec = {
+          k: sid + "|" + a.aw + "|" + (a.film || ""), sid: sid, aw: a.aw, r: RESULT[a.r] ? a.r : "win",
+          film: typeof a.film === "string" ? a.film : null, to: to, who: typeof a.who === "string" ? a.who : "",
+          src: own ? a.src : s.source, outlet: own ? a.outlet || "" : a.outlet || s.outlet || "", date: s.date || "", body: s.body || ""
+        };
+        n++; all.push(rec);
+        to.forEach(function (cid) { push(byC, cid, rec); });
+        // A career honor with no film (a tribute, an honorary Oscar) stays with the person.
+        var films = rec.film ? [rec.film] : [];
+        if (!rec.film && rec.r !== "honor") to.forEach(function (cid) { var c = S.contenders[cid]; if (c && c.film && films.indexOf(c.film) < 0) films.push(c.film); });
+        films.forEach(function (fid) { push(byF, fid, rec); });
+      });
+    });
+    [byC, byF].forEach(function (o) { Object.keys(o).forEach(function (k) { o[k].sort(awOrder); }); });
+    AW = { byC: byC, byF: byF, n: n, all: mergeShared(all) };
+  }
+  var RANK = { win: 0, "runner-up": 1, nom: 2, honor: 3 };
+  // wins first, newest first, and on the same night the film's own prize before its cast's
+  function awOrder(a, b) { return RANK[a.r] - RANK[b.r] || (a.date < b.date ? 1 : a.date > b.date ? -1 : 0) || (a.who ? 1 : 0) - (b.who ? 1 : 0); }
+  // A shared prize appears once per recipient; for a film it is one award with both names.
+  function mergeShared(list) {
+    var out = [], at = {};
+    list.forEach(function (a) {
+      if (at[a.k] == null) { at[a.k] = out.length; out.push(a); return; }
+      var m = out[at[a.k]];
+      if (m === a) return;
+      var who = m.who && a.who && m.who.indexOf(a.who) < 0 ? m.who + " & " + a.who : m.who || a.who;
+      out[at[a.k]] = Object.assign({}, m, { who: who, to: m.to.concat(a.to.filter(function (x) { return m.to.indexOf(x) < 0; })) });
+    });
+    return out;
+  }
+  function filmAwards(fid) { return mergeShared(AW.byF[fid] || []); }
+  // Film categories count everything the film has won; people and crafts count their own prizes.
+  function awardsFor(cid) {
+    var c = S.contenders[cid]; if (!c) return [];
+    var own = AW.byC[cid] || [];
+    return FILMCAT[c.cat] ? mergeShared(own.concat(AW.byF[c.film] || [])).sort(awOrder) : own;
+  }
+  function tally(list) {
+    var t = { w: 0, o: 0, n: list.length };
+    list.forEach(function (a) { if (a.r === "win") t.w++; else t.o++; });
+    return t;
+  }
+  function medalBadge(list) {
+    var t = tally(list); if (!t.w) return "";
+    return '<span class="mb" title="' + plural(t.w, "award") + ' won">' + MEDAL + '<span class="sr">Awards won: </span>' + t.w + "</span>";
+  }
+  function awCell(list) {
+    var t = tally(list); if (!t.n) return '<span class="muted">–</span>';
+    var tip = list.map(function (a) { return (a.r === "win" ? "" : RESULT[a.r] + ": ") + awLabel(a); }).join("\n");
+    return '<span class="awcell" title="' + esc(tip) + '">' + (t.w ? '<span class="mb">' + MEDAL + t.w + "</span>" : "") +
+      (t.o ? '<span class="muted">' + (t.w ? "+" + t.o : otherLabel(list)) + "</span>" : "") + "</span>";
+  }
+  function otherLabel(list) {
+    var o = list.filter(function (a) { return a.r !== "win"; });
+    if (o.length === 1) return RESULT[o[0].r];
+    var kinds = {}; o.forEach(function (a) { kinds[a.r] = 1; });
+    var k = Object.keys(kinds);
+    return k.length === 1 ? o.length + " " + { "runner-up": "runner-up spots", nom: "nominations", honor: "honors" }[k[0]] : o.length + " nominations & honors";
+  }
+  function awLabel(a) {
+    // "Cannes · Palme d'Or", but not "Oscars · Oscar nomination" or "BAFTA · BAFTA Best Actor"
+    var b = bodyName(a.body);
+    return b && a.aw.toLowerCase().indexOf(b.toLowerCase().replace(/s$/, "")) !== 0 ? b + " · " + a.aw : a.aw;
+  }
+  function awChip(a, withWho) {
+    return '<li class="awc ' + esc(a.r) + '">' + (a.r === "win" ? MEDAL : '<span class="res">' + esc(RESULT[a.r]) + "</span>") +
+      "<span>" + esc(awLabel(a)) + (withWho && a.who ? '<span class="aww"> · ' + esc(a.who) + "</span>" : "") + "</span></li>";
+  }
+  function resTag(r) { return '<span class="tag res ' + esc(r) + '">' + (r === "win" ? MEDAL : "") + esc(RESULT[r]) + "</span>"; }
+  function awardsFeed(list, withWho, ctxFilm) {
+    return '<ul class="feed">' + list.map(function (a) {
+      var u = safeUrl(a.src), film = a.film && a.film !== ctxFilm && S.films[a.film];
+      var line = [withWho ? a.who : "", film ? film.title : ""].filter(Boolean).join(" · ");
+      return '<li class="item"><div class="when">' + (a.date ? fmtDay(a.date, true) : "") + '</div><div><div class="head">' + resTag(a.r) +
+        '<span class="ttl">' + esc(awLabel(a)) + "</span></div>" + (line ? "<p>" + esc(line) + "</p>" : "") +
+        (u ? '<span class="src">Source: <a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(a.outlet || new URL(u).hostname.replace(/^www\./, "")) + "</a></span>" : "") + "</div></li>";
+    }).join("") + "</ul>";
+  }
+  function forecastAt(day) {
+    if (HIST.has(day)) return HIST.get(day);
+    var f = M.forecast({ contenders: S.contenders, films: S.films, signals: S.signals, meta: S.meta || {} }, day, { idx: IDX });
+    var rows = {}; Object.keys(f.cats).forEach(function (k) { f.cats[k].rows.forEach(function (r) { rows[r.id] = r; }); });
+    HIST.set(day, rows); return rows;
+  }
+  function history(id) {
+    var today = M.dayNum(todayISO());
+    var since = M.dayNum((S.meta && S.meta.trackingSince) || todayISO());
+    var span = today - since; if (span < 1) return [];
+    var step = Math.max(1, Math.ceil(span / 90)), out = [];
+    for (var d = since; d <= today; d += step) pushPt(d);
+    if ((today - since) % step !== 0) pushPt(today);
+    function pushPt(day) { var r = forecastAt(day)[id]; if (r) out.push({ day: day, nom: r.pNom, win: r.pWin }); }
+    return out;
+  }
+
+  // ------------------------------------------------------------ shared pieces
+  function oddsHead() {
+    return '<div class="odds-head" aria-hidden="true"><span></span><span>Contender</span><span class="k"><i class="key-nom"></i>Nominated</span><span class="k" style="justify-content:end"><i class="key-win"></i>Win</span></div>';
+  }
+  function oddsRow(r, winnerId) {
+    var w = Math.max(0, Math.min(100, r.pNom * 100));
+    var isW = r.id === winnerId;
+    return '<li class="orow' + (r.live ? "" : " out") + '">' +
+      '<span class="rk">' + r.rank + "</span>" +
+      '<div class="who"><button type="button" data-act="c" data-id="' + esc(r.id) + '" title="' + esc(r.c.name) + '">' +
+      '<span class="n">' + (isW ? TROPHY + '<span class="sr">Predicted winner: </span>' : "") + '<span class="t">' + esc(r.c.name) + "</span>" + medalBadge(awardsFor(r.id)) + statusChip(r.status) + "</span>" +
+      '<span class="s">' + esc(subOf(r.c)) + "</span></button></div>" +
+      '<div class="bar" aria-label="' + pct(r.pNom) + ' to be nominated"><span class="track"><span class="fill" style="width:' + w.toFixed(1) + '%"></span></span><span class="v">' + pct(r.pNom) + "</span></div>" +
+      '<span class="winp' + (isW ? " top" : "") + '" aria-label="' + pct(r.pWin) + ' to win">' + pct(r.pWin) + "</span></li>";
+  }
+  function winnerOf(cc) {
+    var best = null; cc.rows.forEach(function (r) { if (r.live && (!best || r.pWin > best.pWin)) best = r; });
+    return best;
+  }
+  function fxChips(sig, max) {
+    var ids = Object.keys(sig.fx || {});
+    ids.sort(function (a, b) { return Math.abs(sig.fx[b]) - Math.abs(sig.fx[a]); });
+    var more = ids.length - (max || 99);
+    return '<div class="fx">' + ids.slice(0, max || 99).map(function (cid) {
+      var c = S.contenders[cid]; if (!c) return "";
+      var v = Number(sig.fx[cid]) || 0;
+      return '<button type="button" class="fxc" data-act="c" data-id="' + esc(cid) + '"><span class="lbl">' + esc(CAT[c.cat] ? CAT[c.cat].short : c.cat) + " · " + esc(c.name) + '</span><span class="pts ' + (v >= 0 ? "up" : "down") + '">' + signed(v) + "</span></button>";
+    }).join("") + (more > 0 ? '<span class="muted" style="font-size:var(--fs-xs);align-self:center">+' + more + " more</span>" : "") + "</div>";
+  }
+  function toneTag(sig) {
+    var t = sig.tone || "neutral";
+    if (t !== "good" && t !== "bad") return "";
+    var lbl = t === "good" ? "▲ Good" : t === "bad" ? "▼ Bad" : "Neutral";
+    return '<span class="tag ' + esc(t) + '">' + lbl + "</span>";
+  }
+  function bodyName(id) {
+    if (!id) return ""; var f = S.festivals[id], p = S.precursors[id];
+    return f ? f.short || f.name : p ? p.short || p.name : "";
+  }
+  function feedItem(sid, opts) {
+    var s = S.signals[sid]; opts = opts || {};
+    return '<li class="item"><div class="when">' + fmtDay(s.date, true) + "</div><div>" +
+      '<div class="head"><span class="tag">' + esc(KIND[s.kind] || s.kind) + (s.body && bodyName(s.body) ? " · " + esc(bodyName(s.body)) : "") + "</span>" + toneTag(s) + '<span class="ttl">' + esc(s.title) + "</span></div>" +
+      (s.detail ? "<p>" + esc(s.detail) + "</p>" : "") +
+      (opts.noFx ? "" : fxChips(s, opts.maxFx || 8)) + sourceLink(s) + "</div></li>";
+  }
+  function sortedSignals(filter) {
+    return Object.keys(S.signals).filter(function (id) { return !filter || filter(S.signals[id]); }).sort(function (a, b) {
+      var A = S.signals[a], B = S.signals[b];
+      if (A.date !== B.date) return A.date < B.date ? 1 : -1;
+      return String(B.added || "").localeCompare(String(A.added || ""));
+    });
+  }
+
+  // ------------------------------------------------------------ calendar
+  function events() {
+    var ev = [], meta = S.meta || {};
+    (meta.keyDates || []).forEach(function (k) { ev.push({ d: k.d, end: k.end, label: k.label, info: k.note || "", kind: "academy" }); });
+    Object.keys(S.precursors).forEach(function (pid) {
+      var p = S.precursors[pid]; if (p.group === "academy") return;
+      if (p.noms) ev.push({ d: p.noms, label: (p.short || p.name) + " nominations", info: p.weight || "", pid: pid, informs: p.informs, kind: "precursor" });
+      if (p.awards) ev.push({ d: p.awards, label: (p.short || p.name) + " winners", info: p.weight || "", pid: pid, informs: p.informs, kind: "precursor" });
+    });
+    Object.keys(S.festivals).forEach(function (fid) {
+      var f = S.festivals[fid]; if (!f.start || f.status === "done") return;
+      ev.push({ d: f.start, end: f.end, label: f.name, info: f.notes || "", kind: "festival" });
+    });
+    ev.sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : 0; });
+    return ev;
+  }
+  function nextEvents(n) {
+    var t = todayISO();
+    return events().filter(function (e) { return e.d >= t && e.kind !== "festival"; }).slice(0, n);
+  }
+
+  // ------------------------------------------------------------ views
+  function forecastView() {
+    var meta = S.meta || {}, nd = daysUntil(meta.nominations || "2027-01-21"), cd = daysUntil(meta.ceremony || "2027-03-14");
+    var sd = daysUntil(meta.shortlists || "2026-12-15"), nx = nextEvents(1)[0];
+    function cell(lbl, days, what) {
+      var big = days == null ? "–" : days > 0 ? days + "<small>" + (days === 1 ? "day" : "days") + "</small>" : days === 0 ? "Today" : "Done";
+      return '<div><span class="eyebrow">' + lbl + '</span><span class="big">' + big + '</span><span class="what">' + what + "</span></div>";
+    }
+    var ledger = '<div class="ledger" role="group" aria-label="Countdown">' +
+      cell("Next precursor date", nx ? daysUntil(nx.d) : null, nx ? esc(nx.label) + " · " + fmtDay(nx.d) : "Nothing scheduled") +
+      cell("Oscar shortlists", sd, fmtLong(meta.shortlists || "2026-12-15")) +
+      cell("Nominations", nd, fmtLong(meta.nominations || "2027-01-21")) +
+      cell("Ceremony", cd, fmtLong(meta.ceremony || "2027-03-14") + (meta.host ? " · " + esc(meta.host) + " hosts" : "")) + "</div>";
+
+    var bp = FC.cats.picture, lead = winnerOf(bp);
+    var spot = "";
+    if (lead) {
+      var f = filmOf(lead.c), fexp = FC.films[lead.c.film], won = tally(awardsFor(lead.id)).w;
+      var race = bp.rows.filter(function (r) { return r.live; }).sort(function (a, b) { return b.pWin - a.pWin; }).slice(0, 6);
+      var second = race[1];
+      // slideshow: the top five Best Picture contenders by win odds, each on its own still and color
+      var slides = race.slice(0, 5), si = Math.min(V.slide || 0, slides.length - 1); V.slide = si;
+      var hrace = race.map(function (r, i) {
+        return '<li' + (i < slides.length ? ' data-i="' + i + '"' + (i === si ? ' class="on"' : "") : "") + '><span class="no">' + pad(i + 1) + '</span><button type="button" data-act="c" data-id="' + esc(r.id) + '" title="' + esc(r.c.name) + '"><span class="t">' + esc(r.c.name) + '</span><span class="s">' + esc(subOf(r.c)) + "</span></button>" +
+          "<b>" + pct(r.pWin) + '</b><i aria-hidden="true" style="--w:' + Math.max(0, Math.min(100, r.pWin * 100)).toFixed(1) + '%"></i></li>';
+      }).join("");
+      var bgs = slides.map(function (r, i) {
+        var sf = filmOf(r.c);
+        return '<div class="hbg' + (i === si ? " on" : "") + '" data-i="' + i + '" style="--ph:' + hueOf(r.c.film) + '">' + heroBg(sf, sf.title, r.c.film) + "</div>";
+      }).join("");
+      var copies = slides.map(function (r, i) {
+        var sf = filmOf(r.c), sx = FC.films[r.c.film], sw = tally(awardsFor(r.id)).w;
+        var line = [sf.dir, sf.dist, sf.rel].filter(Boolean).join(" · ");
+        var gap = i === 0 ? (second ? "; " + second.c.name + " is next at " + second.s.toFixed(1) : "") : ", " + (lead.s - r.s).toFixed(1) + " behind " + lead.c.name;
+        return '<div class="fcopy hcopy" data-i="' + i + '"' + (i === si ? "" : " hidden") + '><span class="fkick">' + (i === 0 ? "Current leader" : "No. " + (i + 1) + " to win") + "</span>" +
+          '<h2 class="ht"' + fitStyle(sf.title) + '><button type="button" data-act="f" data-id="' + esc(r.c.film) + '">' + esc(sf.title) + "</button></h2>" +
+          '<p class="flog">' + esc((line ? line + ". " : "") + "Strength " + r.s.toFixed(1) + gap + ".") + "</p>" +
+          '<div class="hfigs"><div><b>' + pct(r.pWin) + '</b><span>to win</span></div><div><b>' + pct(r.pNom) + "</b><span>nominated</span></div>" +
+          (sx ? "<div><b>" + sx.expNoms.toFixed(1) + "</b><span>expected noms</span></div>" : "") +
+          (sw ? "<div><b>" + sw + "</b><span>" + (sw === 1 ? "award" : "awards") + " won</span></div>" : "") + "</div>" +
+          '<button type="button" class="more" data-act="c" data-id="' + esc(r.id) + '">' + (i === 0 ? "Why it leads " : "Its case ") + LONGARROW + "</button></div>";
+      }).join("");
+      var s0 = slides[si], s0img = !!imgUrl(filmOf(s0.c).bd);
+      var ctl = slides.length > 1 ? '<div class="hctl"><button type="button" data-act="hprev" aria-label="Previous film"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+        '<span class="hcount">' + pad(si + 1) + " / " + pad(slides.length) + '</span><button type="button" data-act="hnext" aria-label="Next film"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+        '<button type="button" data-act="hplay" aria-pressed="' + !!V.autoplay + '" aria-label="' + (V.autoplay ? "Pause slideshow" : "Play slideshow") + '">' + (V.autoplay ? '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8M9 2v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>' : '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg>') + "</button>" +
+        '<span class="hprog" aria-hidden="true"><i></i></span></div>' : "";
+      spot = '<section class="fhero home' + (s0img ? " has-img" : "") + (V.autoplay ? "" : " paused") + '" style="--ph:' + hueOf(s0.c.film) + '" aria-roledescription="carousel" aria-label="Best Picture race">' + bgs +
+        '<div class="fstage"><div class="fnav"><span class="fkick">The top prize · Best Picture · ' + bp.slots + " nominees</span>" + ctl + "</div>" +
+        '<div class="hcopies" aria-live="' + (V.autoplay ? "off" : "polite") + '">' + copies + "</div><span></span></div>" +
+        '<aside class="frail hrail" aria-label="Best Picture odds to win"><div class="rh"><span>Odds to win</span><a href="#cat-picture">All ' + bp.rows.length + ' →</a></div><ol class="hrace">' + hrace + "</ol></aside></section>";
+    }
+
+    // movers & buzz
+    var moves = [];
+    if (PREV) Object.keys(ROW).forEach(function (id) { if (!ROW[id].live) return; var d = delta(id); if (typeof d === "number" && Math.abs(d) >= 0.02) moves.push({ id: id, d: d }); });
+    moves.sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); });
+    var mv = moves.slice(0, 8).map(function (m) {
+      var r = ROW[m.id];
+      return '<li><div class="who"><button type="button" data-act="c" data-id="' + esc(m.id) + '"><span class="n"><span class="t">' + esc(r.c.name) + '</span></span><span class="s">' + esc(CAT[r.c.cat].short) + " · now " + pct(r[metric(r.c.cat)]) + "</span></button></div>" + deltaHtml(m.d) + "</li>";
+    }).join("");
+    var since = meta.trackingSince;
+    var movers = '<div class="panel"><h3>Biggest moves this week</h3>' + (mv ? '<ul class="mlist">' + mv + "</ul>" :
+      '<p class="empty">' + (PREV ? "Nothing moved more than 2 points in the last 7 days." : "Movement shows here once the daily updates start adding history" + (since ? " (tracking began " + fmtDay(since, true) + ")." : ".")) + "</p>") +
+      '<p class="empty" style="padding-top:8px">Points are percentage-point changes in nomination odds (win odds once nominees are known).</p></div>';
+    var latest = sortedSignals().slice(0, 4);
+    var buzz = '<div class="panel"><h3>Latest news <a href="#buzz">All news →</a></h3>' + (latest.length ? '<ul class="feed">' + latest.map(function (id) { return feedItem(id, { maxFx: 3 }); }).join("") + "</ul>" : '<p class="empty">No news recorded yet.</p>') + "</div>";
+
+    // grid
+    var chips = '<div class="chips" role="group" aria-label="Filter categories">' + GROUPS.map(function (g) {
+      return '<button type="button" class="chip" data-act="grp" data-id="' + g[0] + '" aria-pressed="' + (V.group === g[0]) + '">' + g[1] + "</button>";
+    }).join("") + "</div>";
+    var cards = CATS.filter(function (c) {
+      if (V.group === "all") return true;
+      return c.group === V.group;
+    }).map(function (c) { return catCard(c.key); }).join("");
+
+    return spot + ledger +
+      '<section aria-label="This week"><div class="two">' + movers + buzz + "</div></section>" +
+      '<section aria-labelledby="all-h"><header class="sec"><div><h2 id="all-h">All ' + CATS.length + ' categories</h2><p>Predicted nominees in order of nomination odds, starting with Best Picture. The trophy marks the predicted winner; the medal counts awards won so far. The <a href="#nominations">Nominations</a> page has the whole predicted ballot on one page.</p></div>' + chips + '</header><div class="grid">' + cards + "</div></section>";
+  }
+
+  function catCard(k) {
+    var cc = FC.cats[k], cat = cc.cat, win = winnerOf(cc);
+    var live = cc.rows.filter(function (r) { return r.live; });
+    var noms = live.slice(0, cc.slots), next = live[cc.slots];
+    var wide = cc.slots > 5, half = Math.ceil(noms.length / 2);
+    function list(rows) { return oddsHead() + '<ol class="odds">' + rows.map(function (r) { return oddsRow(r, win && win.id); }).join("") + "</ol>"; }
+    var body = !noms.length ? '<p class="empty">No contenders tracked yet.</p>' :
+      wide ? '<div class="cols"><div>' + list(noms.slice(0, half)) + "</div><div>" + list(noms.slice(half)) + "</div></div>" : list(noms);
+    var hot = cc.mode !== "open";
+    return '<article class="card' + (wide ? " wide" : "") + '"><header><h3><a href="#cat-' + k + '">' + esc(cat.name) + '</a></h3><span class="' + (hot ? "mode-pill hot" : "slots") + '">' + (hot ? esc(modeText(cc.mode, cat).split(" · ")[0]) : cc.slots + " nominees") + "</span></header>" +
+      '<div class="body">' + body + "</div><footer><span>" + (next ? "Next: " + esc(next.c.name) + " " + pct(next.pNom) : cc.field.noms > 0.05 ? "Untracked titles: " + cc.field.noms.toFixed(1) + " expected noms" : "&nbsp;") +
+      '</span><a href="#cat-' + k + '">All ' + cc.rows.length + " →</a></footer></article>";
+  }
+
+  function categoryView(k) {
+    var cc = FC.cats[k], cat = cc.cat, win = winnerOf(cc);
+    var rows = cc.rows.map(function (r, i) {
+      var cut = cc.mode !== "final" && i === cc.slots - 1 && cc.rows.length > cc.slots;
+      return '<tr class="clickable' + (cut ? " cut" : "") + (r.live ? "" : " out") + '"><td class="n">' + r.rank + "</td>" +
+        '<td><div class="who"><button type="button" data-act="c" data-id="' + esc(r.id) + '"><span class="n">' + (win && r.id === win.id ? TROPHY + '<span class="sr">Predicted winner: </span>' : "") + '<span class="t">' + esc(r.c.name) + "</span> " + statusChip(r.status) + '</span><span class="s">' + esc(subOf(r.c)) + "</span></button></div></td>" +
+        '<td><div class="bar"><span class="track"><span class="fill" style="width:' + (r.pNom * 100).toFixed(1) + '%"></span></span><span class="v">' + pct(r.pNom) + "</span></div></td>" +
+        '<td><div class="bar win"><span class="track"><span class="fill" style="width:' + (r.pWin * 100).toFixed(1) + '%"></span></span><span class="v">' + pct(r.pWin) + "</span></div></td>" +
+        '<td class="n">' + deltaHtml(delta(r.id)) + '</td><td class="n">' + awCell(awardsFor(r.id)) + '</td><td class="n">' + r.s.toFixed(1) + '</td><td class="n">' + ((r.items || []).length || "–") + "</td></tr>";
+    }).join("");
+    if (cc.field.noms > 0.05 || cc.field.win > 0.005) {
+      rows += '<tr class="field"><td class="n">–</td><td>Titles not tracked yet</td><td class="n" style="text-align:left">' + cc.field.noms.toFixed(1) + " expected nominees</td><td>" + pct(cc.field.win) + "</td><td></td><td></td><td></td><td></td></tr>";
+    }
+    var grp = { top: "Directing", acting: "Acting", writing: "Writing", feature: "Feature films", craft: "Crafts", music: "Music", short: "Short films" }[cat.group] || "";
+    var nav = CATS.map(function (c) { return '<a href="#cat-' + c.key + '"' + (c.key === k ? ' aria-current="page"' : "") + ">" + esc(c.short) + "</a>"; }).join("");
+    var explain = cc.mode === "open" ? "Odds are for making the final " + cc.slots + ". The dashed rule marks the predicted cut. Tap any contender for the evidence behind its number." :
+      cc.mode === "shortlist" ? "The Academy's shortlist is out, so only shortlisted titles can be nominated." :
+      cc.mode === "nominees" ? "Nominees are set; the odds now show who wins." : "The Oscar has been awarded.";
+    return '<section><a class="back" href="#forecast">← Forecast</a><header class="sec"><div><span class="eyebrow">' + esc(grp) + "</span><h2>" + esc(cat.name) + "</h2><p>" + explain + "</p></div>" +
+      '<div class="catmeta"><span class="mode-pill' + (cc.mode !== "open" ? " hot" : "") + '">' + esc(modeText(cc.mode, cat)) + "</span>" +
+      (win ? "<span>Predicted winner: <strong>" + esc(win.c.name) + "</strong> · " + pct(win.pWin) + "</span>" : "") + "</div></header>" +
+      '<div class="tablewrap"><table><thead><tr><th class="n">#</th><th>Contender</th><th><span class="k" style="display:inline-flex;gap:6px;align-items:center"><i class="key-nom"></i>Nominated</span></th><th><span class="k" style="display:inline-flex;gap:6px;align-items:center"><i class="key-win"></i>Win</span></th><th class="n">7-day</th><th class="n" title="Awards won so far this season">Awards</th><th class="n">Strength</th><th class="n">Signals</th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
+      '<nav class="catnav" aria-label="Categories">' + nav + "</nav></section>";
+  }
+
+  function filmsView() {
+    var list = Object.keys(FC.films).map(function (fid) { return { fid: fid, f: FC.films[fid] }; }).sort(function (a, b) { return b.f.expNoms - a.f.expNoms; });
+    var max = Math.max(1, list[0] ? list[0].f.expNoms : 1);
+    var shown = V.filmsAll ? list : list.slice(0, 40);
+    var rows = shown.map(function (x, i) {
+      var film = S.films[x.fid] || { title: x.fid };
+      var best = x.f.cats.slice().sort(function (a, b) { return b.pNom - a.pNom; }).slice(0, 3);
+      var bpc = x.f.cats.filter(function (c) { return c.cat === "picture"; })[0];
+      return '<tr class="clickable"><td class="n">' + (i + 1) + '</td><td><div class="who"><button type="button" data-act="f" data-id="' + esc(x.fid) + '"><span class="n"><span class="t">' + esc(film.title) + '</span></span><span class="s">' + esc([film.dir, film.dist].filter(Boolean).join(" · ")) + "</span></button></div></td>" +
+        '<td><div class="bar"><span class="track"><span class="fill" style="width:' + (x.f.expNoms / max * 100).toFixed(1) + '%"></span></span><span class="v">' + x.f.expNoms.toFixed(1) + "</span></div></td>" +
+        '<td class="n">' + (bpc ? pct(bpc.pNom) : '<span class="muted">–</span>') + '</td><td class="n">' + x.f.expWins.toFixed(1) + '</td><td class="n">' + awCell(filmAwards(x.fid)) + '</td><td><div class="fx" style="margin:0">' + best.map(function (b) {
+          return '<button type="button" class="fxc" data-act="c" data-id="' + esc(b.id) + '"><span class="lbl">' + esc(CAT[b.cat].short) + '</span><span class="pts">' + pct(b.pNom) + "</span></button>";
+        }).join("") + "</div></td></tr>";
+    }).join("");
+    return '<section><header class="sec"><div><h2>Films</h2><p>Expected nominations add up each film’s nomination odds across every category it is tracked in. The record is 14. Best Picture shows the film’s odds of a Best Picture nomination; awards won counts every prize so far, including its cast’s and crew’s.</p></div></header>' +
+      '<div class="tablewrap"><table><thead><tr><th class="n">#</th><th>Film</th><th>Expected nominations</th><th class="n">Best Picture</th><th class="n">Exp. Oscars</th><th class="n">Awards won</th><th>Best shots</th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
+      (list.length > 40 ? '<p><button type="button" class="chip" data-act="films-all">' + (V.filmsAll ? "Show top 40" : "Show all " + list.length + " films") + "</button></p>" : "") + "</section>";
+  }
+
+  // ------------------------------------------------------------ predicted nominations (the ballot)
+  var TIERS = [[0.9, "lock", "Lock"], [0.7, "likely", "Likely"], [0.5, "leaning", "Leaning"], [0.25, "tossup", "Toss-up"], [0, "long", "Long shot"]];
+  // judged on the rounded percentage shown, so two "90%" picks never get different labels
+  function tierOf(p) { var q = Math.round(p * 100) / 100; for (var i = 0; i < TIERS.length; i++) if (q >= TIERS[i][0]) return TIERS[i]; return TIERS[TIERS.length - 1]; }
+  function official(cc) { return cc.mode === "nominees" || cc.mode === "final"; }
+  function ballotOf(cc) {
+    var live = cc.rows.filter(function (r) { return r.live; });
+    return { picks: live.slice(0, cc.slots), bubble: official(cc) ? [] : live.slice(cc.slots, cc.slots + 2) };
+  }
+  function ballotRow(r, cc) {
+    var t = tierOf(r.pNom);
+    return '<li class="brow"><span class="rk">' + r.rank + '</span><div class="who"><button type="button" data-act="c" data-id="' + esc(r.id) + '" title="' + esc(r.c.name) + '">' +
+      '<span class="n"><span class="t">' + esc(r.c.name) + "</span>" + medalBadge(awardsFor(r.id)) + "</span>" +
+      '<span class="s">' + esc(subOf(r.c)) + "</span></button></div>" +
+      (official(cc) ? statusChip(r.status) + "<span></span>" : '<span class="tier ' + t[1] + '">' + t[2] + '</span><span class="v">' + pct(r.pNom) + "</span>") + "</li>";
+  }
+  function ballotCard(k) {
+    var cc = FC.cats[k], cat = cc.cat, b = ballotOf(cc), wide = cc.slots > 5, off = official(cc);
+    function list(rows) { return '<ol class="blist">' + rows.map(function (r) { return ballotRow(r, cc); }).join("") + "</ol>"; }
+    var half = Math.ceil(b.picks.length / 2);
+    var body = !b.picks.length ? '<p class="empty">No contenders tracked yet.</p>' :
+      wide ? '<div class="cols"><div>' + list(b.picks.slice(0, half)) + "</div><div>" + list(b.picks.slice(half)) + "</div></div>" : list(b.picks);
+    var bub = b.bubble.map(function (r) { return '<button type="button" class="linkish" data-act="c" data-id="' + esc(r.id) + '">' + esc(r.c.name) + "</button> " + pct(r.pNom); }).join(" · ");
+    var field = !off && cc.field.noms >= 0.3 ? "~" + cc.field.noms.toFixed(1) + " expected nominees not tracked yet" : "";
+    var note = bub ? "On the bubble: " + bub + (field ? " · " + field : "") : field ? field.charAt(0).toUpperCase() + field.slice(1) : "&nbsp;";
+    var head = off ? '<span class="mode-pill hot">' + (cc.mode === "final" ? "Winner announced" : "Official nominees") + "</span>" :
+      cc.mode === "shortlist" ? '<span class="mode-pill hot">From the shortlist</span>' : '<span class="slots">' + plural(cc.slots, "nominee") + "</span>";
+    return '<article class="card ballot' + (wide ? " wide" : "") + '"><header><h3><a href="#cat-' + k + '">' + esc(cat.name) + "</a></h3>" + head + "</header>" +
+      '<div class="body">' + body + '</div><footer><span class="bub">' + note + '</span><a href="#cat-' + k + '">Full race →</a></footer></article>';
+  }
+  function catsText(cats) {
+    return Object.keys(cats).map(function (k) { return CAT[k].short + (cats[k] > 1 ? " ×" + cats[k] : ""); }).join(", ");
+  }
+  function nominationsView() {
+    var meta = S.meta || {}, nomDay = meta.nominations || "2027-01-21", nd = daysUntil(nomDay);
+    var counts = { lock: 0, likely: 0, leaning: 0, tossup: 0, long: 0 }, total = 0, slots = 0, offCats = 0, films = {};
+    CATS.forEach(function (c) {
+      var cc = FC.cats[c.key], b = ballotOf(cc);
+      slots += cc.slots;
+      if (official(cc)) offCats++;
+      b.picks.forEach(function (r) {
+        total++;
+        if (!official(cc)) counts[tierOf(r.pNom)[1]]++;
+        var f = films[r.c.film] || (films[r.c.film] = { n: 0, cats: {} });
+        f.n++; f.cats[c.key] = (f.cats[c.key] || 0) + 1;
+      });
+    });
+    var done = offCats === CATS.length;
+    function cell(lbl, big, what) { return '<div><span class="eyebrow">' + lbl + '</span><span class="big">' + big + '</span><span class="what">' + what + "</span></div>"; }
+    var open = slots - total;
+    var ledger = '<div class="ledger five" role="group" aria-label="How settled the ballot is">' +
+      cell("Nominations", nd > 0 ? nd + "<small>" + (nd === 1 ? "day" : "days") + "</small>" : nd === 0 ? "Today" : "Out", esc(fmtLong(nomDay))) +
+      (done ? cell("Nominees", total, "Across all " + CATS.length + " categories") :
+        cell("Locks · 90%+", counts.lock + "<small>of " + slots + " slots</small>", "Near-certain nominees") +
+        cell("Likely · 70–89%", counts.likely, "Strong favorites") +
+        cell("Leaning · 50–69%", counts.leaning, "Better than even") +
+        cell("Toss-ups · under 50%", counts.tossup + counts.long, "Picked, but could easily miss" + (open > 0 ? ". " + plural(open, "slot") + " with no tracked pick yet" : ""))) + "</div>";
+
+    var list = Object.keys(films).map(function (fid) { var fx = FC.films[fid]; return { fid: fid, n: films[fid].n, cats: films[fid].cats, e: fx ? fx.expNoms : 0 }; })
+      .sort(function (a, b) { return b.n - a.n || b.e - a.e; });
+    var max = list.length ? list[0].n : 1, shown = V.tallyAll ? list : list.slice(0, 10);
+    var trows = shown.map(function (x, i) {
+      var f = S.films[x.fid] || { title: x.fid };
+      return '<li class="trow"><span class="rk">' + (i + 1) + '</span><div class="who"><button type="button" data-act="f" data-id="' + esc(x.fid) + '" title="' + esc(f.title) + '"><span class="n"><span class="t">' + esc(f.title) + "</span></span>" +
+        '<span class="s">' + esc([f.dir, f.dist].filter(Boolean).join(" · ")) + "</span></button></div>" +
+        '<div class="bar"><span class="track"><span class="fill" style="width:' + (x.n / max * 100).toFixed(1) + '%"></span></span><span class="v">' + x.n + "</span></div>" +
+        '<span class="ex">' + x.e.toFixed(1) + '</span><div class="tc">' + esc(catsText(x.cats)) + "</div></li>";
+    }).join("");
+    var tally = '<article class="card tally"><header><h3>' + (done ? "Most nominations" : "Most predicted nominations") + '</h3><span class="slots">The record is 14</span></header><div class="body">' +
+      '<div class="trow th" aria-hidden="true"><span></span><span>Film</span><span>' + (done ? "Nominations" : "Predicted") + '</span><span class="ex">Expected</span></div><ol class="tlist">' + trows + "</ol></div>" +
+      "<footer><span>" + (done ? "Counts every official nomination." : "Predicted counts the categories where a film is inside the cut today; expected adds up its odds, the better guess at its final total.") + "</span>" +
+      (list.length > 10 ? '<button type="button" class="chip" data-act="tally-all">' + (V.tallyAll ? "Show top 10" : "Show all " + list.length) + "</button>" : "") + "</footer></article>";
+
+    var chips = '<div class="chips" role="group" aria-label="Filter categories">' + GROUPS.map(function (g) {
+      return '<button type="button" class="chip" data-act="grp" data-id="' + g[0] + '" aria-pressed="' + (V.group === g[0]) + '">' + g[1] + "</button>";
+    }).join("") + "</div>";
+    var cards = CATS.filter(function (c) { return V.group === "all" || c.group === V.group; }).map(function (c) { return ballotCard(c.key); }).join("");
+    var legend = '<p class="tiers-key">' + TIERS.map(function (t) { return '<span class="tier ' + t[1] + '">' + t[2] + "</span>" + (t[0] ? Math.round(t[0] * 100) + "%+" : "under 25%"); }).join(" ") + "</p>";
+    return '<section><header class="sec"><div><h2>' + (done ? "The nominees" : "Predicted nominations") + "</h2><p>" +
+      (done ? "The official nominees for the 99th Academy Awards in all 24 categories." :
+        "Who gets nominated if the Academy announced today: the predicted nominees in all " + CATS.length + " categories, each with its odds of being nominated and how safe the pick is. The real list comes out " + esc(fmtLong(nomDay)) + ".") + "</p></div></header>" +
+      ledger + "</section>" +
+      '<section aria-label="Nomination leaders">' + tally + "</section>" +
+      '<section aria-labelledby="ballot-h"><header class="sec"><div><h2 id="ballot-h">' + (done ? "Nominees by category" : "The ballot") + "</h2>" + (done ? "" : legend) + "</div>" + chips + '</header><div class="grid">' + cards + "</div></section>";
+  }
+
+  // ------------------------------------------------------------ awards won
+  function awardRows(k) {
+    var cc = FC.cats[k]; if (!cc) return [];
+    var m = metric(k), seen = {}, out = [];
+    cc.rows.forEach(function (r) {
+      var l = awardsFor(r.id); if (!l.length) return;
+      // one row per person: someone tracked for two films shows once, with both titles
+      var key = FILMCAT[k] ? r.id : String(r.c.name).toLowerCase(), x = seen[key];
+      if (!x) { seen[key] = { r: r, l: l.slice(), subs: [subOf(r.c)] }; out.push(seen[key]); return; }
+      if (r[m] > x.r[m]) x.r = r;
+      if (x.subs.indexOf(subOf(r.c)) < 0) x.subs.push(subOf(r.c));
+      x.l = mergeShared(x.l.concat(l)).sort(awOrder);
+    });
+    out.forEach(function (x) { x.t = tally(x.l); });
+    return out.sort(function (a, b) { return b.t.w - a.t.w || b.t.n - a.t.n || b.r[m] - a.r[m]; });
+  }
+  var CAT_ABBR = { supactor: "Supp. Actor", supactress: "Supp. Actress", origscreenplay: "Orig. Screenplay", adaptscreenplay: "Adapt. Screenplay",
+    animshort: "Anim. Short", liveshort: "Live Short", docshort: "Doc Short", production: "Prod. Design", makeup: "Makeup", vfx: "VFX" };
+  function abbr(k) { return CAT_ABBR[k] || (CAT[k] ? CAT[k].short : k); }
+  function awHead(first, odds) {
+    return '<div class="aw-head" aria-hidden="true"><span>' + first + '</span><span class="h-aw">Awards</span><span>Won</span><span>' + odds + "</span></div>";
+  }
+  function awRow(who, t, odds, chips) {
+    return '<li class="awrow">' + who + '<span class="awt">' + (t.w ? '<span class="mb">' + MEDAL + '<span class="sr">Awards won: </span>' + t.w + "</span>" : '<span class="muted">–</span>') + "</span>" +
+      '<span class="awo">' + odds + '</span><ul class="awcs">' + chips + "</ul></li>";
+  }
+  function awardCard(k, rows) {
+    var cc = FC.cats[k], cat = cc.cat, m = metric(k), film = !!FILMCAT[k];
+    var items = rows.map(function (x) {
+      var who = '<div class="who"><button type="button" data-act="c" data-id="' + esc(x.r.id) + '" title="' + esc(x.r.c.name) + '"><span class="n"><span class="t">' + esc(x.r.c.name) + "</span>" + statusChip(x.r.status) + "</span>" +
+        '<span class="s">' + esc(x.subs.join(" · ")) + "</span></button></div>";
+      return awRow(who, x.t, pct(x.r[m]), x.l.map(function (a) { return awChip(a, film); }).join(""));
+    });
+    return '<article class="card awcard"><header><h3><a href="#cat-' + k + '">' + esc(cat.name) + '</a></h3><span class="slots">' + plural(rows.length, film ? "film" : "contender") + " with awards</span></header>" +
+      '<div class="body">' + awHead(film ? "Film" : "Contender", m === "pWin" ? "To win" : "Oscar nom") + '<ol class="awl">' + items.join("") + "</ol></div></article>";
+  }
+  function filmBoard() {
+    var list = Object.keys(AW.byF).filter(function (fid) { return S.films[fid]; }).map(function (fid) {
+      var l = filmAwards(fid), fx = FC.films[fid];
+      return { fid: fid, l: l, t: tally(l), e: fx ? fx.expNoms : 0 };
+    }).filter(function (x) { return x.t.n > 0; }).sort(function (a, b) { return b.t.w - a.t.w || b.t.n - a.t.n || b.e - a.e; });
+    if (!list.length) return "";
+    var shown = V.boardAll ? list : list.slice(0, 10);
+    var items = shown.map(function (x) {
+      var f = S.films[x.fid], fx = FC.films[x.fid];
+      var bpc = fx && fx.cats.filter(function (c) { return c.cat === "picture"; })[0];
+      var best = bpc || (fx && fx.cats.slice().sort(function (a, b) { return b.pNom - a.pNom; })[0]);
+      var odds = best ? pct(best.pNom) + "<small>" + esc(abbr(best.cat)) + "</small>" : '<span class="muted">–</span>';
+      var who = '<div class="who"><button type="button" data-act="f" data-id="' + esc(x.fid) + '" title="' + esc(f.title) + '"><span class="n"><span class="t">' + esc(f.title) + "</span></span>" +
+        '<span class="s">' + esc([f.dir, f.dist].filter(Boolean).join(" · ")) + "</span></button></div>";
+      return awRow(who, x.t, odds, x.l.map(function (a) { return awChip(a, true); }).join(""));
+    });
+    var more = list.length > 10 ? '<footer><span>' + (V.boardAll ? "All " + list.length + " films with awards" : "Top 10 of " + list.length + " films with awards") + '</span><button type="button" class="chip" data-act="board-all">' + (V.boardAll ? "Show top 10" : "Show all " + list.length) + "</button></footer>" : "";
+    return '<article class="card awcard"><header><h3>Most awarded films</h3><span class="slots">Every prize, including the cast’s and crew’s</span></header>' +
+      '<div class="body">' + awHead("Film", "Oscar nom") + '<ol class="awl">' + items.join("") + "</ol></div>" + more + "</article>";
+  }
+  function awardsView() {
+    var grp = AGROUPS.filter(function (g) { return g[0] === V.agroup; })[0] || AGROUPS[0];
+    var keys = grp[2] || CATS.map(function (c) { return c.key; });
+    var chips = '<div class="chips" role="group" aria-label="Filter award categories">' + AGROUPS.map(function (g) {
+      return '<button type="button" class="chip" data-act="agrp" data-id="' + g[0] + '" aria-pressed="' + (V.agroup === g[0]) + '">' + g[1] + "</button>";
+    }).join("") + "</div>";
+    var w = 0, o = 0, people = {};
+    (AW.all || []).forEach(function (a) { if (a.r === "win") w++; else o++; if (a.who) a.who.split(" & ").forEach(function (p) { people[p] = 1; }); });
+    var nFilms = Object.keys(AW.byF).filter(function (fid) { return S.films[fid]; }).length;
+    var intro = '<p>Every prize so far for this season’s contenders: festival juries and audiences, critics groups, guilds and tributes. ' +
+      (w + o ? plural(w, "award") + " won and " + plural(o, "other honor") + " across " + plural(nFilms, "film") + " and " + plural(Object.keys(people).length, "person").replace("persons", "people") + ". " : "") +
+      "Oscar nominations are added on Jan 21 and the winners on Mar 14.</p>";
+    var cards = [], empty = [];
+    keys.forEach(function (k) { var rows = awardRows(k); if (rows.length) cards.push(awardCard(k, rows)); else empty.push(CAT[k].short); });
+    var nx = nextEvents(1)[0];
+    var emptyNote = empty.length ? '<p class="empty">No awards yet in ' + esc(empty.join(", ")) + "." +
+      (nx ? " Next results: " + esc(nx.label) + ", " + fmtDay(nx.d) + "." : "") + "</p>" : "";
+    var board = grp[0] === "all" ? filmBoard() : "";
+    var body = board + cards.join("");
+    return '<section><header class="sec"><div><h2>Awards won</h2>' + intro + "</div>" + chips + "</header>" +
+      (body ? '<div class="grid awgrid">' + body + "</div>" : "") + (emptyNote || (!body ? '<p class="empty">No awards recorded yet.</p>' : "")) + "</section>";
+  }
+
+  function impactChips(fid) {
+    var f = FC.films[fid]; if (!f) return "";
+    var best = f.cats.slice().sort(function (a, b) { return b.pNom - a.pNom; }).filter(function (x) { return x.pNom >= 0.03; }).slice(0, 3);
+    if (!best.length) return "";
+    return '<div class="fx">' + best.map(function (b) {
+      return '<button type="button" class="fxc" data-act="c" data-id="' + esc(b.id) + '"><span class="lbl">' + esc(CAT[b.cat].short) + '</span><span class="pts">' + pct(b.pNom) + "</span></button>";
+    }).join("") + "</div>";
+  }
+  function festivalsView() {
+    var list = Object.keys(S.festivals).map(function (id) { return { id: id, f: S.festivals[id] }; }).sort(function (a, b) { return String(a.f.start || "9").localeCompare(String(b.f.start || "9")); });
+    var t = todayISO();
+    var items = list.map(function (x) {
+      var f = x.f;
+      var st = f.status === "done" || (f.end && f.end < t) ? "Done" : f.start && f.start <= t ? "Happening now" : "Upcoming";
+      var aw = (f.awards || []).map(function (a) {
+        return '<li><span class="aw">' + esc(a.award) + '</span><span class="wn">' + (a.film && S.films[a.film] ? '<button type="button" class="linkish" style="display:inline" data-act="f" data-id="' + esc(a.film) + '">' + esc(a.winner) + "</button>" : esc(a.winner)) + "</span>" +
+          (a.note ? '<span class="note">' + esc(a.note) + "</span>" : "") + (a.film ? '<div class="awx">' + impactChips(a.film) + "</div>" : "") + "</li>";
+      }).join("");
+      var pr = (f.premieres || []).map(function (p) {
+        var film = S.films[p.film] || { title: p.film };
+        return '<li><span class="aw">Premiere</span><span class="wn"><button type="button" class="linkish" style="display:inline" data-act="f" data-id="' + esc(p.film) + '">' + esc(film.title) + "</button></span>" +
+          (p.note ? '<span class="note">' + esc(p.note) + "</span>" : "") + '<div class="awx">' + impactChips(p.film) + "</div></li>";
+      }).join("");
+      var src = safeUrl(f.source);
+      return '<article class="fest"><div class="dates"><b>' + esc(f.short || f.name) + "</b>" + esc(range(f.start, f.end)) + "<br>" + esc(f.place || "") + "</div><div>" +
+        "<h3>" + esc(f.name) + ' <span class="mode-pill' + (st === "Happening now" ? " hot" : "") + '">' + st + "</span></h3>" +
+        '<div class="sub">' + esc([f.edition, f.jury ? "Jury: " + f.jury : ""].filter(Boolean).join(" · ")) + "</div>" +
+        (aw || pr ? '<ul class="awards">' + aw + pr + "</ul>" : '<p class="empty">Results will appear here.</p>') +
+        (f.notes ? '<p class="spot-note" style="margin-top:10px">' + esc(f.notes) + "</p>" : "") +
+        (src ? '<span class="src">Source: <a href="' + esc(src) + '" target="_blank" rel="noopener noreferrer">' + esc(new URL(src).hostname.replace(/^www\./, "")) + "</a></span>" : "") + "</div></article>";
+    }).join("");
+    return '<section><header class="sec"><div><h2>Festival tracker</h2><p>The season’s launch pads, from Sundance to AFI Fest. This year a top prize at Berlin, Busan, Cannes, Sundance, Toronto (Platform) or Venice also makes a non-English film eligible for International Feature without a country submission.</p></div></header>' +
+      '<div class="timeline">' + (items || '<p class="empty">No festivals recorded yet.</p>') + "</div></section>";
+  }
+
+  function precursorsView() {
+    var t = todayISO(), ev = events(), byMonth = {}, order = [];
+    ev.forEach(function (e) {
+      var key = e.d.slice(0, 7); if (!byMonth[key]) { byMonth[key] = []; order.push(key); } byMonth[key].push(e);
+    });
+    var months = order.map(function (key) {
+      var label = dt(key + "-15").toLocaleDateString(undefined, { month: "long", year: "numeric" });
+      return "<div><h3>" + esc(label) + "</h3>" + byMonth[key].map(function (e) {
+        var end = e.end || e.d, past = end < t, today = e.d <= t && end >= t, n = daysUntil(e.d);
+        var state = past ? "Done" : today ? "Today" : n === 1 ? "Tomorrow" : "In " + n + " days";
+        var inf = (e.informs || []).slice(0, 5).map(function (c) { return CAT[c] ? CAT[c].short : c; });
+        var more = (e.informs || []).length - inf.length;
+        var res = e.pid ? Object.keys(S.signals).filter(function (sid) { var s = S.signals[sid]; return s.body === e.pid && Math.abs(M.dayNum(s.date) - M.dayNum(e.d)) <= 2; }) : [];
+        return '<div class="ev' + (past ? " past" : "") + (today ? " today" : "") + '"><span class="d">' + esc(range(e.d, e.end)) + "</span><div>" +
+          '<div class="l">' + esc(e.label) + "</div>" + (e.info ? '<div class="i">' + esc(e.info) + "</div>" : "") +
+          (inf.length ? '<div class="i muted">Informs: ' + esc(inf.join(", ")) + (more > 0 ? " +" + more : "") + "</div>" : "") +
+          (res.length ? '<ul class="feed">' + res.map(function (sid) { return feedItem(sid, { maxFx: 6 }); }).join("") + "</ul>" : "") +
+          '</div><span class="state">' + state + "</span></div>";
+      }).join("") + "</div>";
+    }).join("");
+    var tba = Object.keys(S.precursors).filter(function (pid) { var p = S.precursors[pid]; return !p.noms && !p.awards; }).map(function (pid) {
+      var p = S.precursors[pid];
+      return '<div class="ev"><span class="d">TBA</span><div><div class="l">' + esc(p.name) + '</div><div class="i">' + esc(p.window || "Dates to be announced") + (p.weight ? " · " + esc(p.weight) : "") + '</div></div><span class="state">TBA</span></div>';
+    }).join("");
+    var results = sortedSignals(function (s) { return s.kind === "precursor"; });
+    return '<section><header class="sec"><div><h2>Precursor calendar</h2><p>Critics groups, guilds and televised awards between now and March 14. Each result is recorded with its point value, so you can see exactly how it moved the odds.</p></div></header>' +
+      '<div class="two" style="align-items:start"><div class="panel cal">' + months + (tba ? "<div><h3>Dates to come</h3>" + tba + "</div>" : "") + "</div>" +
+      '<div class="panel"><h3>Results so far</h3>' + (results.length ? '<ul class="feed">' + results.map(function (id) { return feedItem(id, { maxFx: 6 }); }).join("") + "</ul>" :
+        '<p class="empty">No precursor results yet. The first, the Gotham nominations, land on ' + fmtDay((S.precursors.gotham && S.precursors.gotham.noms) || "2026-10-27", true) + ".</p>") + "</div></div></section>";
+  }
+
+  function buzzView() {
+    var F = [["all", "All news"], ["good", "Good press"], ["bad", "Bad press"], ["festival", "Festivals"], ["precursor", "Precursors"], ["pr", "Buzz & box office"]];
+    var chips = '<div class="chips" role="group" aria-label="Filter news">' + F.map(function (x) { return '<button type="button" class="chip" data-act="buzz" data-id="' + x[0] + '" aria-pressed="' + (V.buzz === x[0]) + '">' + x[1] + "</button>"; }).join("") + "</div>";
+    var list = sortedSignals(function (s) {
+      if (V.buzz === "all") return true;
+      if (V.buzz === "good" || V.buzz === "bad") return s.tone === V.buzz;
+      return s.kind === V.buzz;
+    });
+    var good = 0, bad = 0; Object.keys(S.signals).forEach(function (id) { var t = S.signals[id].tone; if (t === "good") good++; else if (t === "bad") bad++; });
+    return '<section><header class="sec"><div><h2>News &amp; buzz</h2><p>Every event the forecast has recorded, newest first: festival prizes, precursor results, box office, premieres and controversies. ' +
+      plural(good, "good item") + ", " + plural(bad, "bad item") + ". Buzz fades over about two months; results and box office stay.</p></div>" + chips + "</header>" +
+      '<div class="panel">' + (list.length ? '<ul class="feed">' + list.map(function (id) { return feedItem(id); }).join("") + "</ul>" : '<p class="empty">Nothing matches this filter yet.</p>') + "</div></section>";
+  }
+
+  function methodView() {
+    var meta = S.meta || {}, rub = meta.rubric || {};
+    function rubTable(title, rows) {
+      if (!rows || !rows.length) return "";
+      return '<div><h3 style="font-size:var(--fs-md);margin-bottom:8px">' + esc(title) + '</h3><div class="tablewrap"><table><tbody>' + rows.map(function (r) { return "<tr><td>" + esc(r.what) + "</td><td>" + esc(r.pts) + "</td></tr>"; }).join("") + "</tbody></table></div></div>";
+    }
+    var log = (meta.log || []).slice(0, 30).map(function (l) {
+      return '<li class="item"><div class="when">' + esc(fmtStamp(l.at)) + "</div><div><p style=\"margin:0;color:var(--ink)\">" + esc(l.summary) + "</p>" + (l.n ? '<span class="src">' + plural(l.n, "record") + " written</span>" : "") + "</div></li>";
+    }).join("");
+    var rules = (meta.rules || []).map(function (r) { return "<p><strong>" + esc(r.title) + ".</strong> " + esc(r.text) + "</p>"; }).join("");
+    var src = (meta.sources || []).map(function (s) { var u = safeUrl(s.url); return "<li>" + (u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(s.label) + "</a>" : esc(s.label)) + "</li>"; }).join("");
+    return '<section><header class="sec"><div><h2>How the forecast works</h2></div></header><div class="prose">' +
+      "<p>Every contender gets a <strong>strength</strong> score on a 100-point scale. It starts from a <strong>baseline</strong> that reflects where pundits rank it, seeded from AwardsWatch’s four-editor September predictions in every category and Variety’s October Best Picture tracking. Every recorded event then adds or subtracts points: festival prizes, precursor nominations and wins, and good or bad press. Reviews nudge it through Metacritic, most of all in Picture, Director and the screenplay races.</p>" +
+      "<p><strong>Nomination odds.</strong> In each category the model sets a cut line so the expected number of nominees equals the open slots (10 for Best Picture, 5 everywhere else), holding back a small share for films not tracked yet. Contenders far above the line approach certainty; near the line it is a coin flip. The curve tightens as nomination morning approaches.</p>" +
+      "<p><strong>Win odds.</strong> Each contender’s chance to win weighs its nomination odds against the gap in strength to the rest of the field. Early in the season a lead of 10 points is a modest edge; by March the same gap is decisive.</p>" +
+      "<p><strong>The Academy overrides the model.</strong> When shortlists come out (Dec 15), anything left off is eliminated. On nominations morning (Jan 21) the nominees lock in at 100%. After the ceremony the winners show as won.</p>" +
+      "<p><strong>Daily updates.</strong> Every morning an automated research run reads the latest festival, precursor, box office and campaign news, records each event with its point value and a source, and moves a baseline only when pundit consensus shifts for a reason not already recorded. Everything is dated, so each contender’s history is replayable.</p>" +
+      "<p><strong>Awards won.</strong> Each result also records who won it, so the Awards tab can list every actor’s, actress’s, director’s and film’s haul. A film in Best Picture or another film category gets credit for everything it won, including its cast’s and crew’s prizes; a performer or craft gets their own. The points above are what move the odds; the Awards tab is the record.</p></div>" +
+      '<div class="formula">strength = baseline + festivals + precursors + buzz + reviews<br>P(nominated) = 1 / (1 + e^−(strength − cut line) / ' + FC.tau.toFixed(1) + ")<br>P(win) ∝ P(nominated) × e^(strength / " + FC.T.toFixed(1) + ")</div>" +
+      '<p class="muted" style="font-size:var(--fs-sm);margin:-24px 0 0">Today’s spreads: ' + FC.tau.toFixed(1) + " for nominations and " + FC.T.toFixed(1) + " for wins. They shrink to 3.5 by nomination day and the ceremony.</p>" +
+      '<div><h3 style="font-family:var(--display);font-size:var(--fs-lg);margin-bottom:12px">Point scale</h3><div class="rub">' +
+      rubTable("Festivals", rub.festival) + rubTable("Precursors (win · nomination)", rub.precursor) + rubTable("Buzz & PR", rub.pr) + rubTable("The Academy", rub.academy) + "</div>" +
+      (rub.notes ? '<p class="muted" style="font-size:var(--fs-sm)">' + esc(rub.notes) + "</p>" : "") + "</div>" +
+      (rules ? '<div><h3 style="font-family:var(--display);font-size:var(--fs-lg);margin-bottom:12px">New rules for the 99th Oscars</h3><div class="prose">' + rules + "</div></div>" : "") +
+      '<div class="two" style="align-items:start"><div class="panel"><h3>Update log</h3>' + (log ? '<ul class="feed">' + log + "</ul>" : '<p class="empty">No updates yet.</p>') + "</div>" +
+      '<div class="panel"><h3>Seed sources</h3><ul style="margin:0;padding-left:18px;display:grid;gap:6px;font-size:var(--fs-sm)">' + src + '</ul><p class="empty" style="padding-top:10px">Every news item and result carries its own source link.</p></div></div>' +
+      '<p class="foot">An independent fan forecast, not affiliated with or endorsed by the Academy of Motion Picture Arts and Sciences. Odds are model estimates for fun and discussion.</p></section>';
+  }
+
+  // ------------------------------------------------------------ drawer
+  var drawer, scrim;
+  function openDrawer(type, id, opener) {
+    V.drawer = { type: type, id: id }; V.opener = opener || null;
+    renderDrawer(); drawer.hidden = false; scrim.hidden = false;
+    document.documentElement.style.overflow = "hidden";
+    var x = drawer.querySelector(".x"); if (x) x.focus({ preventScroll: true });
+  }
+  function closeDrawer() {
+    V.drawer = null; drawer.hidden = true; scrim.hidden = true; drawer.innerHTML = "";
+    document.documentElement.style.overflow = "";
+    if (V.opener && document.contains(V.opener)) V.opener.focus({ preventScroll: true });
+    V.opener = null;
+  }
+  function renderDrawer() {
+    if (!V.drawer || !FC) return;
+    drawer.innerHTML = V.drawer.type === "f" ? filmDrawer(V.drawer.id) : contenderDrawer(V.drawer.id);
+    var db = drawer.querySelector(".db"); if (db) db.scrollTop = 0;
+    wireChart();
+  }
+  // With a film id, the header becomes a small key-art hero: the film's backdrop still, or its tinted color field.
+  function dhead(eyebrow, title, sub, fid) {
+    var f = fid && S.films[fid], bd = f ? imgUrl(f.bd) : null;
+    var art = f ? '<div class="dbg' + (bd ? " has-img" : "") + '" aria-hidden="true">' + (bd ? '<img src="' + esc(bd) + '" alt="" decoding="async">' : '<span class="dwm">' + esc(f.title) + "</span>") + "</div>" : "";
+    return '<div class="dh' + (f ? " dhero" + (bd ? " has-img" : "") : "") + '"' + (f ? ' style="--ph:' + hueOf(fid) + '"' : "") + ">" + art +
+      '<div style="min-width:0"><span class="eyebrow">' + eyebrow + '</span><h2 id="dtitle">' + title + '</h2><div class="dsub">' + sub + "</div></div>" +
+      '<button type="button" class="x" data-act="close" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2 2 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></div>';
+  }
+  function contenderDrawer(id) {
+    var r = ROW[id];
+    if (!r) return dhead("", "Not found", "") + '<div class="db"><p class="empty">This contender is no longer tracked.</p></div>';
+    var c = r.c, cat = CAT[c.cat], film = filmOf(c), cc = FC.cats[c.cat];
+    var sub = (PERSON[c.cat] || c.cat === "song" ? '<button type="button" data-act="f" data-id="' + esc(c.film) + '">' + esc(film.title) + "</button>" + (film.dist ? " · " + esc(film.dist) : "") :
+      '<button type="button" data-act="f" data-id="' + esc(c.film) + '">Film details</button>' + (subOf(c) ? " · " + esc(subOf(c)) : "")) + " " + statusChip(r.status);
+    var d = delta(id), dTxt = typeof d === "number" ? deltaHtml(d) + " 7 days" : d === "new" ? "new this week" : "";
+    var tiles = '<div class="tiles"><div class="tile"><div class="lab">Nominated</div><div class="val">' + pct(r.pNom) + '</div><div class="dl">' + (metric(c.cat) === "pNom" ? dTxt : "") + "</div></div>" +
+      '<div class="tile"><div class="lab">Wins the Oscar</div><div class="val">' + pct(r.pWin) + '</div><div class="dl">' + (metric(c.cat) === "pWin" ? dTxt : "") + "</div></div>" +
+      '<div class="tile"><div class="lab">Strength</div><div class="val">' + r.s.toFixed(1) + '</div><div class="dl muted">#' + r.rank + " of " + cc.rows.length + "</div></div></div>";
+    var p = r.parts, comps = [["Festivals", p.festival], ["Precursors", p.precursor], ["Buzz & PR", p.pr], ["Academy", p.academy], ["Reviews", p.critics]].filter(function (x) { return Math.abs(x[1]) >= 0.05 || x[0] !== "Academy"; });
+    var mx = Math.max(5, Math.max.apply(null, comps.map(function (x) { return Math.abs(x[1]); })));
+    var parts = '<div class="parts"><div class="part"><span class="pl">Baseline (consensus)</span><span></span><span class="pv">' + p.base.toFixed(1) + "</span></div>" +
+      comps.map(function (x) {
+        var w = Math.min(50, Math.abs(x[1]) / mx * 50);
+        return '<div class="part"><span class="pl">' + x[0] + '</span><span class="div" aria-hidden="true">' + (Math.abs(x[1]) >= 0.05 ? '<i class="' + (x[1] > 0 ? "up" : "down") + '" style="width:' + w.toFixed(1) + '%"></i>' : "") + '</span><span class="pv">' + signed(x[1]) + "</span></div>";
+      }).join("") + '<div class="part total"><span class="pl">Strength</span><span></span><span class="pv">' + r.s.toFixed(1) + "</span></div></div>";
+    var items = (r.items || []).slice().sort(function (a, b) { return S.signals[a.id].date < S.signals[b.id].date ? 1 : -1; });
+    var ev = items.length ? '<ul class="feed">' + items.map(function (it) {
+      var s = S.signals[it.id], decayed = Math.abs(it.raw - it.eff) >= 0.05;
+      return '<li class="item"><div class="when">' + fmtDay(s.date, true) + '</div><div><div class="head"><span class="tag">' + esc(KIND[s.kind] || s.kind) + "</span>" + toneTag(s) +
+        '<span class="ttl">' + esc(s.title) + '</span></div><p><strong class="mono" style="color:var(--' + (it.eff >= 0 ? "good" : "bad") + ')">' + signed(it.eff) + " pts</strong>" + (decayed ? " now (was " + signed(it.raw) + ", fading)" : "") + (s.detail ? " · " + esc(s.detail) : "") + "</p>" + sourceLink(s) + "</div></li>";
+    }).join("") + "</ul>" : '<p class="empty">No events recorded for this contender yet. Its odds come from the consensus baseline.</p>';
+    var base = (c.base || []).slice().reverse().map(function (b) {
+      return '<li class="item"><div class="when">' + fmtDay(b.d, true) + '</div><div><p style="margin:0"><strong class="mono">' + Number(b.v).toFixed(1) + "</strong> · " + esc(b.why || "") + "</p></div></li>";
+    }).join("");
+    var also = Object.keys(ROW).filter(function (k) { return k !== id && ROW[k].c.film === c.film; }).map(function (k) { return ROW[k]; }).sort(function (a, b) { return b.pNom - a.pNom; });
+    var alsoHtml = also.length ? '<div class="fx">' + also.map(function (o) {
+      return '<button type="button" class="fxc" data-act="c" data-id="' + esc(o.id) + '"><span class="lbl">' + esc(CAT[o.c.cat].short) + (PERSON[o.c.cat] ? " · " + esc(o.c.name) : "") + '</span><span class="pts">' + pct(o.pNom) + "</span></button>";
+    }).join("") + "</div>" : "";
+    var aws = awardsFor(id), at = tally(aws);
+    var awHtml = "<div><h4>Awards" + (at.n ? " · " + at.w + " won" + (at.o ? ", " + at.o + " other" : "") : "") + "</h4>" +
+      (at.n ? (FILMCAT[c.cat] ? '<p class="empty" style="padding:0 0 4px">Includes prizes for the film’s cast and crew.</p>' : "") + awardsFeed(aws, !!FILMCAT[c.cat], c.film) : '<p class="empty">No awards yet.</p>') + "</div>";
+    return dhead(esc(cat.name), esc(c.name), sub, c.film) + '<div class="db">' + tiles +
+      (c.note ? '<div class="note-box">' + esc(c.note) + "</div>" : "") + awHtml +
+      "<div><h4>Why this number</h4>" + parts + "</div>" +
+      "<div><h4>Odds over time</h4>" + chartHtml(history(id)) + "</div>" +
+      "<div><h4>Evidence</h4>" + ev + "</div>" +
+      (base ? '<div><h4>Consensus notes</h4><ul class="feed">' + base + "</ul></div>" : "") +
+      (alsoHtml ? "<div><h4>" + esc(film.title) + " elsewhere</h4>" + alsoHtml + "</div>" : "") + "</div>";
+  }
+  function filmDrawer(fid) {
+    var f = S.films[fid], fx = FC.films[fid];
+    if (!f) return dhead("", "Not found", "") + '<div class="db"><p class="empty">This film is no longer tracked.</p></div>';
+    var kind = { doc: "Documentary", animated: "Animated feature", "short-live": "Live action short", "short-anim": "Animated short", "short-doc": "Documentary short" }[f.kind] || "Feature film";
+    var mc = M.latestAt(f.mc, M.dayNum(todayISO()));
+    var fa = filmAwards(fid), ft = tally(fa);
+    var tiles = '<div class="tiles t4"><div class="tile"><div class="lab">Expected noms</div><div class="val">' + (fx ? fx.expNoms.toFixed(1) : "–") + '</div></div><div class="tile"><div class="lab">Expected Oscars</div><div class="val">' + (fx ? fx.expWins.toFixed(1) : "–") + "</div></div>" +
+      '<div class="tile"><div class="lab">Awards won</div><div class="val">' + ft.w + '</div><div class="dl muted">' + (ft.o ? "+" + ft.o + " other" : "so far") + "</div></div>" +
+      '<div class="tile"><div class="lab">Metacritic</div><div class="val">' + (mc ? esc(mc.v) : "–") + '</div><div class="dl muted">' + (mc ? "as of " + fmtDay(mc.d) : "not recorded") + "</div></div></div>";
+    var cats = fx ? fx.cats.slice().sort(function (a, b) { return b.pNom - a.pNom; }).map(function (x) {
+      var r = ROW[x.id];
+      return '<li class="orow"><div class="who"><button type="button" data-act="c" data-id="' + esc(x.id) + '"><span class="n"><span class="t">' + esc(CAT[x.cat].name) + "</span>" + statusChip(r.status) + "</span>" + (PERSON[x.cat] ? '<span class="s">' + esc(r.c.name) + "</span>" : "") + "</button></div>" +
+        '<div class="bar"><span class="track"><span class="fill" style="width:' + (x.pNom * 100).toFixed(1) + '%"></span></span><span class="v">' + pct(x.pNom) + '</span></div><span class="winp">' + pct(x.pWin) + "</span></li>";
+    }).join("") : "";
+    var fest = [];
+    Object.keys(S.festivals).forEach(function (id) {
+      var fe = S.festivals[id];
+      (fe.premieres || []).forEach(function (p) { if (p.film === fid) fest.push({ d: fe.start, t: (fe.short || fe.name) + " · premiere", n: p.note }); });
+      // festival prizes recorded only on the festival page (no award record yet)
+      if (!fa.length) (fe.awards || []).forEach(function (a) { if (a.film === fid) fest.push({ d: fe.end || fe.start, t: (fe.short || fe.name) + " · " + a.award, n: a.note }); });
+    });
+    fest.sort(function (a, b) { return a.d < b.d ? -1 : 1; });
+    var sigs = sortedSignals(function (s) { return (s.films || []).indexOf(fid) >= 0; });
+    return dhead(kind, esc(f.title), esc([f.dir, f.dist, f.rel, f.country].filter(Boolean).join(" · ")), fid) + '<div class="db">' +
+      (f.logline ? '<p style="margin:0;color:var(--ink-2)">' + esc(f.logline) + "</p>" : "") + tiles +
+      (fa.length ? "<div><h4>Awards · " + ft.w + " won" + (ft.o ? ", " + ft.o + " other" : "") + "</h4>" + awardsFeed(fa, true, fid) + "</div>" : "") +
+      (cats ? '<div><h4>Categories</h4><div class="catlist"><div class="odds-head" style="grid-template-columns:minmax(0,1fr) minmax(70px,38%) 44px"><span>Category</span><span class="k"><i class="key-nom"></i>Nominated</span><span class="k" style="justify-content:end"><i class="key-win"></i>Win</span></div><ol class="odds">' + cats + "</ol></div></div>" : "") +
+      (fest.length ? '<div><h4>' + (fa.length ? "Festival premieres" : "Festival path") + '</h4><ul class="feed">' + fest.map(function (x) { return '<li class="item"><div class="when">' + fmtDay(x.d, true) + '</div><div><span class="ttl">' + esc(x.t) + "</span>" + (x.n ? "<p>" + esc(x.n) + "</p>" : "") + "</div></li>"; }).join("") + "</ul></div>" : "") +
+      (sigs.length ? '<div><h4>News</h4><ul class="feed">' + sigs.map(function (id) { return feedItem(id, { maxFx: 6 }); }).join("") + "</ul></div>" : "") + "</div>";
+  }
+
+  // ------------------------------------------------------------ film page (#film-<id>)
+  // a film's backdrop still: an image uploaded to this page's own storage
+  function imgUrl(u) {
+    if (typeof u !== "string") return null;
+    if (/^\/_blob\/[A-Za-z0-9._-]+$/.test(u)) return u;
+    try { var x = new URL(u, location.href); return x.protocol === "https:" && x.origin === location.origin ? x.href : null; } catch (e) { return null; }
+  }
+  // a film can set its own hue (matched to its still); otherwise one is derived from its id
+  function hueOf(id) { var fh = S.films[id] && Number(S.films[id].hue); if (isFinite(fh) && S.films[id].hue != null) return ((fh % 360) + 360) % 360; if (HUE[id] != null) return HUE[id]; var h = 0; for (var i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) % 360; return h; }
+  var KINDS = { doc: "Documentary", animated: "Animated feature", "short-live": "Live action short", "short-anim": "Animated short", "short-doc": "Documentary short" };
+  function filmPage(fid) {
+    var f = S.films[fid], fx = FC.films[fid];
+    if (!f) return '<section><a class="back" href="#films">← All films</a>' + stateBox("Film not found", "This film isn’t tracked in the forecast. Pick another from the Films tab.") + "</section>";
+    var kind = KINDS[f.kind] || "Feature film", today = todayISO();
+    var mc = M.latestAt(f.mc, M.dayNum(today));
+    var fa = filmAwards(fid), ft = tally(fa);
+    var rows = fx ? fx.cats.slice().sort(function (a, b) { return b.pNom - a.pNom; }) : [];
+    var bp = rows.filter(function (x) { return x.cat === "picture"; })[0];
+    var top = rows[0];
+    var year = (f.rel && (f.rel.match(/\d{4}/) || [])[0]) || "2026";
+
+    var bd = imgUrl(f.bd);
+    if (bd) sampleHue(fid, bd);
+    var hue = hueOf(fid), LONG = '<svg width="56" height="10" viewBox="0 0 56 10" aria-hidden="true"><path d="M0 5h54M49 1l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    // first festival premiere, else the release date
+    var prem = null;
+    Object.keys(S.festivals).forEach(function (id) {
+      var fe = S.festivals[id];
+      (fe.premieres || []).forEach(function (p) { if (p.film === fid && fe.start && (!prem || fe.start < prem.d)) prem = { d: fe.start, t: fe.short || fe.name }; });
+    });
+
+    // the people in the race
+    var people = {};
+    rows.forEach(function (x) { if (!PERSON[x.cat] || x.cat === "director") return; var r = ROW[x.id]; if (!r) return; (people[r.c.name] = people[r.c.name] || []).push({ id: x.id, cat: x.cat }); });
+    var names = Object.keys(people);
+    var dirRow = rows.filter(function (x) { return x.cat === "director"; })[0];
+    function personBtn(n) { return '<button type="button" data-act="c" data-id="' + esc(people[n][0].id) + '">' + esc(n) + "</button>"; }
+
+    var logline = f.logline || [kind + (f.dir ? " from " + f.dir : "") + (f.dist ? ", released by " + f.dist : "") + ".",
+      rows.length ? "Tracked in " + plural(rows.length, "Oscar category").replace("categorys", "categories") + (top ? ", with its best shot in " + CAT[top.cat].name + " (" + pct(top.pNom) + ")." : ".") : ""].join(" ");
+
+    // pager panes (01, 02, ...), like a featured-slides rail
+    var panes = [];
+    if (names.length) panes.push(["In the race", names.slice(0, 4).map(personBtn).join(", ") + (names.length > 4 ? " +" + (names.length - 4) : "")]);
+    if (top) panes.push(["Best shot", esc(CAT[top.cat].name) + " · <b>" + pct(top.pNom) + "</b> to be nominated, <b>" + pct(top.pWin) + "</b> to win"]);
+    if (bp && bp !== top) panes.push(["Best Picture", "<b>" + pct(bp.pNom) + "</b> to be nominated · <b>" + pct(bp.pWin) + "</b> to win"]);
+    if (ft.n) panes.push(["Awards", "<b>" + ft.w + "</b> won" + (ft.o ? ", " + ft.o + " other" : "") + (fa[0] ? " · latest: " + esc(awLabel(fa[0])) : "")]);
+    if (mc) panes.push(["Critics", "Metacritic <b>" + esc(mc.v) + "</b> · as of " + esc(fmtDay(mc.d, true))]);
+    if (!panes.length) panes.push(["Season", "No results recorded yet"]);
+    var pi = Math.min(V.fpane || 0, panes.length - 1);
+    var pager = '<div class="fpager" aria-live="polite">' + panes.map(function (p, i) {
+      return '<div class="fpane" data-pane="' + i + '"' + (i === pi ? "" : " hidden") + '><span class="no">' + pad(i + 1) + '</span><span class="lb">' + esc(p[0]) + '</span><span class="vl">' + p[1] + "</span></div>";
+    }).join("") + "</div>" +
+      (panes.length > 1 ? '<div class="fdots" role="group" aria-label="Highlights">' + panes.map(function (p, i) {
+        return '<button type="button" data-act="fpane" data-id="' + i + '" aria-pressed="' + (i === pi) + '" aria-label="' + esc(p[0]) + '"><i></i></button>';
+      }).join("") + "</div>" : "");
+
+    var nav = '<nav class="fnav" aria-label="On this page"><a class="menu" href="#films" aria-label="All films" title="All films"><i></i><i></i><i></i></a>' +
+      [["outlook", "Outlook"], ["awards", "Awards"], ["timeline", "Timeline"], ["festivals", "Festivals"], ["news", "News"]].map(function (t) {
+        return '<button type="button" data-act="ftab" data-id="' + t[0] + '" data-scroll="1">' + t[1] + "</button>";
+      }).join("") + "</nav>";
+
+    var rail = '<aside class="frail" aria-label="Film details"><dl>' +
+      (prem || f.rel ? "<div><dt>Premiere</dt><dd>" + (prem ? esc(fmtDay(prem.d, true)) + " · " + esc(prem.t) : esc(f.rel)) + "</dd></div>" : "") +
+      (f.dir ? "<div><dt>Director</dt><dd>" + (dirRow ? '<button type="button" data-act="c" data-id="' + esc(dirRow.id) + '">' + esc(f.dir) + "</button>" : esc(f.dir)) + "</dd></div>" : "") +
+      (f.dist ? "<div><dt>Distributor</dt><dd>" + esc(f.dist) + (f.rel && prem ? " · out " + esc(f.rel) : "") + "</dd></div>" : "") +
+      "<div><dt>Format</dt><dd>" + esc([kind, f.country].filter(Boolean).join(" · ")) + "</dd></div></dl>" +
+      '<a class="trailer' + (bd ? " has-img" : "") + '"' + (bd ? ' style="--tbd:url(&quot;' + esc(bd) + '&quot;)"' : "") + ' data-wm="' + esc(f.title) + '" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(f.title + " " + year + " official trailer") + '" target="_blank" rel="noopener noreferrer">' +
+      '<span class="play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span><span class="tl">Watch trailer<small>Opens YouTube</small></span></a></aside>';
+
+    var hero = '<section class="fhero' + (bd ? " has-img" : "") + '" style="--ph:' + hue + '" aria-labelledby="ftitle"><div class="fbg' + (bd ? " has-img" : "") + '" aria-hidden="true">' + (bd ? '<img class="fbd" src="' + esc(bd) + '" alt="" decoding="async">' : "") + '<span class="fwm">' + esc(f.title) + "</span></div>" +
+      '<div class="fstage"><div class="fnav"><a class="fback" href="#films">← All films</a><span class="fkick">' + esc(kind) + "</span></div>" +
+      '<div class="fcopy"><h1 id="ftitle" tabindex="-1"' + fitStyle(f.title) + '>' + esc(f.title) + "</h1>" + '<p class="flog">' + esc(logline) + "</p>" +
+      (names.length ? '<p class="fpeople"><span>In the race</span> ' + names.slice(0, 5).map(personBtn).join(", ") + (names.length > 5 ? " +" + (names.length - 5) : "") + "</p>" : "") + "</div></div>" + rail + "</section>";
+
+    // season timeline: every dated moment for this film, plus what's next
+    var ev = [], seen = {};
+    function add(d, label, ty, cls) { if (!d) return; var k = d + "|" + label; if (seen[k]) return; seen[k] = 1; ev.push({ d: String(d).slice(0, 10), l: label, ty: ty, cls: cls || "" }); }
+    Object.keys(S.festivals).forEach(function (id) {
+      var fe = S.festivals[id];
+      (fe.premieres || []).forEach(function (p) { if (p.film === fid) add(fe.start, (fe.short || fe.name) + " premiere", "Premiere"); });
+      if (!fa.length) (fe.awards || []).forEach(function (a) { if (a.film === fid) add(fe.end || fe.start, (fe.short || fe.name) + " · " + a.award, "Won", "win"); });
+    });
+    fa.forEach(function (a) { add(a.date, awLabel(a), RESULT[a.r], a.r === "win" ? "win" : a.r === "nom" ? "nom" : ""); });
+    sortedSignals(function (s) { return s.kind === "pr" && (s.films || []).indexOf(fid) >= 0; }).forEach(function (sid) { var s = S.signals[sid]; add(s.date, s.title, s.tone === "bad" ? "Bad press" : s.tone === "good" ? "Good press" : "News"); });
+    var meta = S.meta || {};
+    [[meta.shortlists || "2026-12-15", "Oscar shortlists"], [meta.nominations || "2027-01-21", "Oscar nominations"], [meta.ceremony || "2027-03-14", "99th Academy Awards"]].forEach(function (k) { if (k[0] >= today) add(k[0], k[1], "Academy", "future"); });
+    ev.sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : 0; });
+    var cards = [], placed = false;
+    ev.forEach(function (e) {
+      if (!placed && e.d > today) { cards.push('<li class="day today" id="f-today"><span class="m">Today</span><span class="dd">' + dt(today).getDate() + '</span><span class="dl">' + esc(dt(today).toLocaleDateString(undefined, { month: "short" })) + "</span></li>"); placed = true; }
+      var dd = dt(e.d);
+      cards.push('<li class="day ' + e.cls + (e.d > today && e.cls !== "future" ? " future" : "") + '"><span class="m">' + esc(dd.toLocaleDateString(undefined, { month: "short", year: "2-digit" })) + '</span><span class="dd">' + dd.getDate() + '</span><span class="dl">' + esc(e.l) + '</span><span class="ty">' + esc(e.ty) + "</span></li>");
+    });
+    var strip = '<section class="strip-wrap" id="f-season" aria-label="Season timeline"><h3>Season timeline <span>' + plural(ev.length, "date") + " · scroll sideways</span></h3>" +
+      '<ol class="strip" style="list-style:none;margin:0;padding:0 0 6px">' + cards.join("") + "</ol></section>";
+
+    // Oscar outlook + chart for the best shot
+    var shownRows = V.fall ? rows : rows.slice(0, 8);
+    var cats = shownRows.map(function (x) {
+      var r = ROW[x.id];
+      return '<li class="orow"><div class="who"><button type="button" data-act="c" data-id="' + esc(x.id) + '"><span class="n"><span class="t">' + esc(CAT[x.cat].name) + "</span>" + statusChip(r.status) + "</span>" + (PERSON[x.cat] || x.cat === "song" ? '<span class="s">' + esc(r.c.name) + "</span>" : "") + "</button></div>" +
+        '<div class="bar"><span class="track"><span class="fill" style="width:' + (x.pNom * 100).toFixed(1) + '%"></span></span><span class="v">' + pct(x.pNom) + '</span></div><span class="winp">' + pct(x.pWin) + "</span></li>";
+    }).join("");
+    var outlook = '<div class="fgrid fout" id="f-outlook"><div class="panel"><h3>Categories <small>' + (rows.length > 8 && !V.fall ? "top 8 of " + rows.length : plural(rows.length, "category").replace("categorys", "categories")) + "</small></h3>" +
+      (cats ? '<div class="catlist"><div class="odds-head" style="grid-template-columns:minmax(0,1fr) minmax(70px,38%) 44px"><span>Category</span><span class="k"><i class="key-nom"></i>Nominated</span><span class="k" style="justify-content:end"><i class="key-win"></i>Win</span></div><ol class="odds">' + cats + "</ol></div>" : '<p class="empty">Not tracked in any category yet.</p>') +
+      (rows.length > 8 ? '<p style="margin:12px 0 0"><button type="button" class="chip" data-act="fall">' + (V.fall ? "Show top 8" : "Show all " + rows.length + " categories") + "</button></p>" : "") + "</div>" +
+      (top ? '<div class="panel"><h3>Odds over time <small>' + esc(CAT[top.cat].name) + "</small></h3>" + chartHtml(history(top.id)) + "</div>" : "") + "</div>";
+
+    var awards = '<div class="panel" id="f-awards"><h3>Awards &amp; honors <small>' + (ft.n ? ft.w + " won" + (ft.o ? " · " + ft.o + " other" : "") : "") + "</small></h3>" +
+      (fa.length ? '<p class="empty" style="padding:0 0 4px">Includes prizes for the film’s cast and crew.</p>' + awardsFeed(fa, true, fid) : '<p class="empty">No awards yet. Festival prizes, critics groups and guild results land here as they’re announced.</p>') + "</div>";
+
+    var festRows = [];
+    Object.keys(S.festivals).forEach(function (id) {
+      var fe = S.festivals[id];
+      (fe.premieres || []).forEach(function (p) { if (p.film === fid) festRows.push({ d: fe.start, t: (fe.name || fe.short) + " · premiere", n: p.note }); });
+      (fe.awards || []).forEach(function (a) { if (a.film === fid) festRows.push({ d: fe.end || fe.start, t: (fe.name || fe.short) + " · " + a.award, n: a.note, w: 1 }); });
+    });
+    festRows.sort(function (a, b) { return a.d < b.d ? -1 : 1; });
+    var festHtml = '<div class="panel" id="f-fest"><h3>Festivals <small>' + plural(festRows.length, "stop") + "</small></h3>" + (festRows.length ? '<ul class="feed">' + festRows.map(function (x) {
+      return '<li class="item"><div class="when">' + fmtDay(x.d, true) + '</div><div><div class="head">' + (x.w ? resTag("win") : '<span class="tag">Premiere</span>') + '<span class="ttl">' + esc(x.t) + "</span></div>" + (x.n ? "<p>" + esc(x.n) + "</p>" : "") + "</div></li>";
+    }).join("") + "</ul>" : '<p class="empty">No festival stops recorded.</p>') + "</div>";
+
+    var sigs = sortedSignals(function (s) { return (s.films || []).indexOf(fid) >= 0; });
+    var news = '<div class="panel" id="f-news"><h3>News &amp; buzz <small>' + plural(sigs.length, "item") + "</small></h3>" + (sigs.length ? '<ul class="feed">' + sigs.map(function (id) { return feedItem(id, { maxFx: 6 }); }).join("") + "</ul>" : '<p class="empty">No news recorded yet.</p>') + "</div>";
+
+    // the numbers people come for, right under the hero
+    function tile(l, v, sub) { return '<div><span class="l">' + l + '</span><span class="v">' + v + '</span><span class="s">' + sub + "</span></div>"; }
+    var sum = '<section class="fsum" aria-label="Key numbers">' +
+      tile("Best Picture", bp ? pct(bp.pNom) : "–", bp ? "nominated · " + pct(bp.pWin) + " to win" : "not in the race") +
+      tile("Expected noms", fx ? fx.expNoms.toFixed(1) : "–", "across " + plural(rows.length, "category").replace("categorys", "categories")) +
+      tile("Expected Oscars", fx ? fx.expWins.toFixed(1) : "–", "summed win odds") +
+      tile("Awards won", String(ft.w), ft.o ? "+" + ft.o + " nominations & honors" : "this season") +
+      tile("Best shot", top ? pct(top.pWin) : "–", top ? "to win " + esc(CAT[top.cat].short) : "–") +
+      tile("Metacritic", mc ? esc(mc.v) : "–", mc ? "as of " + esc(fmtDay(mc.d)) : "no score yet") + "</section>";
+
+    var TABSF = [["outlook", "Outlook", ""], ["awards", "Awards", ft.n], ["timeline", "Timeline", ev.length], ["festivals", "Festivals", festRows.length], ["news", "News", sigs.length]];
+    var cur = TABSF.some(function (t) { return t[0] === V.ftab; }) ? V.ftab : "outlook";
+    var tabs = '<div class="ftabs" role="tablist" aria-label="Film sections" id="f-tabs">' + TABSF.map(function (t) {
+      return '<button type="button" role="tab" data-act="ftab" data-id="' + t[0] + '" aria-selected="' + (t[0] === cur) + '">' + t[1] + (t[2] ? " <small>" + t[2] + "</small>" : "") + "</button>";
+    }).join("") + "</div>";
+    var body = cur === "awards" ? awards : cur === "timeline" ? strip : cur === "festivals" ? festHtml : cur === "news" ? news : outlook;
+
+    return '<div class="fp">' + hero + sum + '<div class="fsec">' + tabs + '<div class="fbody" role="tabpanel">' + body + "</div></div></div>";
+  }
+
+  // A film with a still but no saved hue takes its color from the still: the average of a 16×16 thumbnail.
+  var HUE = {}, HUEP = {};
+  function sampleHue(fid, src) {
+    if (HUEP[fid] || (S.films[fid] && S.films[fid].hue != null)) return;
+    HUEP[fid] = 1;
+    var im = new Image();
+    im.onload = function () {
+      try {
+        // the dominant hue, not the average: grey-heavy stills (night streets, stone) average out to a muddy
+        // green, so each pixel votes for its hue weighted by how colorful it is
+        var cv = document.createElement("canvas"); cv.width = cv.height = 32;
+        var cx = cv.getContext("2d"); cx.drawImage(im, 0, 0, 32, 32);
+        var d = cx.getImageData(0, 0, 32, 32).data, bins = [], i, k, h = 30, best = -1;
+        for (i = 0; i < 36; i++) bins.push(0);
+        for (i = 0; i < d.length; i += 4) {
+          var r = d[i] / 255, g = d[i + 1] / 255, b = d[i + 2] / 255;
+          var mx = Math.max(r, g, b), mn = Math.min(r, g, b), dd = mx - mn, l = (mx + mn) / 2;
+          if (dd < 0.02 || l < 0.08 || l > 0.92) continue;
+          var s = dd / (1 - Math.abs(2 * l - 1)), hh = mx === r ? ((g - b) / dd) % 6 : mx === g ? (b - r) / dd + 2 : (r - g) / dd + 4;
+          hh = hh * 60; if (hh < 0) hh += 360;
+          bins[Math.floor(hh / 10) % 36] += s * (1 - Math.abs(2 * l - 1));
+        }
+        for (i = 0; i < 36; i++) { var v = 0; for (k = -1; k <= 1; k++) v += bins[(i + k + 36) % 36]; if (v > best) { best = v; h = i * 10 + 5; } }
+        HUE[fid] = h; clearTimeout(timer); timer = setTimeout(render, 40);
+      } catch (e) { /* unreadable image: keep the default color */ }
+    };
+    im.src = src;
+  }
+  // home slideshow controls
+  var slideTimer = null, slideHover = false;
+  try { V.autoplay = !matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { V.autoplay = true; }
+  function showSlide(i) {
+    var hero = document.querySelector(".fhero.home"); if (!hero) return;
+    var bgs = hero.querySelectorAll(".hbg"), n = bgs.length; if (!n) return;
+    i = ((i % n) + n) % n; V.slide = i;
+    bgs.forEach(function (el) { el.classList.toggle("on", +el.getAttribute("data-i") === i); });
+    hero.querySelectorAll(".hcopy").forEach(function (el) { el.hidden = +el.getAttribute("data-i") !== i; });
+    hero.querySelectorAll(".hrace li[data-i]").forEach(function (el) { el.classList.toggle("on", +el.getAttribute("data-i") === i); });
+    var cur = bgs[i];
+    hero.style.setProperty("--ph", cur.style.getPropertyValue("--ph"));
+    hero.classList.toggle("has-img", !!cur.querySelector("img"));
+    var c = hero.querySelector(".hcount"); if (c) c.textContent = pad(i + 1) + " / " + pad(n);
+    var pg = hero.querySelector(".hprog i"); if (pg) { pg.style.animation = "none"; void pg.offsetWidth; pg.style.animation = ""; }
+  }
+  function startSlides() {
+    clearInterval(slideTimer);
+    slideTimer = setInterval(function () {
+      if (!V.autoplay || slideHover || document.hidden || V.tab !== "forecast" || V.drawer) return;
+      showSlide((V.slide || 0) + 1);
+    }, 7000);
+  }
+  function wireSlides(app) {
+    var hero = app.querySelector(".fhero.home"); if (!hero) return;
+    function pause(on) { slideHover = on; hero.classList.toggle("hover", on); }
+    hero.addEventListener("mouseenter", function () { pause(true); });
+    hero.addEventListener("mouseleave", function () { pause(false); });
+    hero.addEventListener("focusin", function () { pause(true); });
+    hero.addEventListener("focusout", function (e) { if (!hero.contains(e.relatedTarget)) pause(false); });
+    var x0 = null;
+    hero.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    hero.addEventListener("touchend", function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 50 && !e.target.closest(".hrail")) { showSlide((V.slide || 0) + (dx < 0 ? 1 : -1)); startSlides(); } }, { passive: true });
+    startSlides();
+  }
+
+  // ------------------------------------------------------------ contender page (#c-<id>)
+  // Same key-art hero as the film page, then the numbers, then tabs for the evidence.
+  function heroBg(f, wm, fid) {
+    var bd = imgUrl(f.bd);
+    if (bd && fid) sampleHue(fid, bd);
+    return '<div class="fbg' + (bd ? " has-img" : "") + '" aria-hidden="true">' + (bd ? '<img class="fbd" src="' + esc(bd) + '" alt="" decoding="async">' : "") + '<span class="fwm">' + esc(wm) + "</span></div>";
+  }
+  // Long single words (e.g. a one-name performer) shrink to fit the hero instead of breaking mid-word.
+  function fitStyle(text) {
+    var n = Math.max.apply(null, String(text).split(/\s+/).map(function (w) { return w.length; }));
+    if (!(n > 9)) return "";
+    var k = (0.66 * n).toFixed(2);
+    return ' style="font-size:min(clamp(2.4rem, 6.4vw, 5.2rem), calc(34rem / ' + k + '), calc((100vw - 110px) / ' + k + '))"';
+  }
+  var LONGARROW = '<svg width="56" height="10" viewBox="0 0 56 10" aria-hidden="true"><path d="M0 5h54M49 1l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function contenderPage(id) {
+    var r = ROW[id];
+    if (!r) return '<section><a class="back" href="#forecast">← Forecast</a>' + stateBox("Contender not found", "This contender isn’t tracked in the forecast any more. Pick another from the Forecast tab.") + "</section>";
+    var c = r.c, cat = CAT[c.cat], f = filmOf(c), cc = FC.cats[c.cat], fid = c.film;
+    var bd = imgUrl(f.bd), hue = hueOf(fid), year = (f.rel && (f.rel.match(/\d{4}/) || [])[0]) || "2026";
+    var person = PERSON[c.cat] || c.cat === "song", m = metric(c.cat), d = delta(id);
+    var dv = typeof d === "number" ? Math.round(d * 100) : null;
+    var dTxt = dv == null ? (d === "new" ? "new this week" : "") : dv === 0 ? "no change in 7 days" : (dv > 0 ? "▲ +" : "▼ −") + Math.abs(dv) + " pts in 7 days";
+    var aws = awardsFor(id), at = tally(aws);
+    var lead = winnerOf(cc), live = cc.rows.filter(function (x) { return x.live; });
+
+    var logline = person ? cat.name + " contender for " + f.title + (f.dist ? " (" + f.dist + ")" : "") + "." + (f.logline ? " " + f.logline : "") :
+      (f.logline || [f.dir ? "Directed by " + f.dir : "", f.dist ? "released by " + f.dist : ""].filter(Boolean).join(", ") + ".");
+    var standing = !r.live ? "No longer in the running." : lead && lead.id === id ? "The predicted winner in " + cat.name + "." :
+      r.rank <= cc.slots ? "Inside the predicted " + cc.slots + ", ranked #" + r.rank + "." : "Outside the predicted " + cc.slots + " for now, ranked #" + r.rank + ".";
+
+    var panes = [["Nominated", "<b>" + pct(r.pNom) + "</b> to be nominated" + (m === "pNom" && dTxt ? " · " + esc(dTxt) : "")],
+      ["Wins the Oscar", "<b>" + pct(r.pWin) + "</b> to win" + (m === "pWin" && dTxt ? " · " + esc(dTxt) : "") + (lead && lead.id !== id ? " · leader: " + esc(lead.c.name) + " " + pct(lead.pWin) : "")],
+      ["Strength", "<b>" + r.s.toFixed(1) + "</b> · #" + r.rank + " of " + cc.rows.length + " in " + esc(cat.short)]];
+    if (at.n) panes.push(["Awards", "<b>" + at.w + "</b> won" + (at.o ? ", " + at.o + " other" : "") + (aws[0] ? " · latest: " + esc(awLabel(aws[0])) : "")]);
+    var pi = Math.min(V.fpane || 0, panes.length - 1);
+    var pager = '<div class="fpager" aria-live="polite">' + panes.map(function (p, i) {
+      return '<div class="fpane" data-pane="' + i + '"' + (i === pi ? "" : " hidden") + '><span class="no">' + pad(i + 1) + '</span><span class="lb">' + esc(p[0]) + '</span><span class="vl">' + p[1] + "</span></div>";
+    }).join("") + '</div><div class="fdots" role="group" aria-label="Highlights">' + panes.map(function (p, i) {
+      return '<button type="button" data-act="fpane" data-id="' + i + '" aria-pressed="' + (i === pi) + '" aria-label="' + esc(p[0]) + '"><i></i></button>';
+    }).join("") + "</div>";
+
+    var items = (r.items || []).slice().sort(function (a, b) { return S.signals[a.id].date < S.signals[b.id].date ? 1 : -1; });
+    var baseList = (c.base || []).slice().reverse();
+    var TABSC = [["outlook", "Outlook", ""], ["awards", "Awards", at.n], ["evidence", "Evidence", items.length], ["consensus", "Consensus", baseList.length]];
+    var nav = '<nav class="fnav" aria-label="On this page"><a class="menu" href="#cat-' + esc(c.cat) + '" aria-label="All of ' + esc(cat.name) + '" title="All of ' + esc(cat.name) + '"><i></i><i></i><i></i></a>' +
+      TABSC.map(function (t) { return '<button type="button" data-act="ftab" data-id="' + t[0] + '" data-scroll="1">' + t[1] + "</button>"; }).join("") + "</nav>";
+
+    var rail = '<aside class="frail" aria-label="Details"><dl>' +
+      '<div><dt>Category</dt><dd><a href="#cat-' + esc(c.cat) + '">' + esc(cat.name) + "</a></dd></div>" +
+      "<div><dt>Film</dt><dd><button type=\"button\" data-act=\"f\" data-id=\"" + esc(fid) + "\">" + esc(f.title) + "</button>" + (f.dist ? " · " + esc(f.dist) : "") + "</dd></div>" +
+      (f.dir && c.cat !== "director" ? "<div><dt>Director</dt><dd>" + esc(f.dir) + "</dd></div>" : "") +
+      "<div><dt>Standing</dt><dd>" + esc(standing) + (r.status !== "contender" ? " " + statusChip(r.status) : "") + "</dd></div></dl>" +
+      '<a class="trailer' + (bd ? " has-img" : "") + '"' + (bd ? ' style="--tbd:url(&quot;' + esc(bd) + '&quot;)"' : "") + ' data-wm="' + esc(f.title) + '" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(f.title + " " + year + " official trailer") + '" target="_blank" rel="noopener noreferrer">' +
+      '<span class="play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span><span class="tl">Watch trailer<small>Opens YouTube</small></span></a></aside>';
+
+    var hero = '<section class="fhero' + (bd ? " has-img" : "") + '" style="--ph:' + hue + '" aria-labelledby="ftitle">' + heroBg(f, person ? c.name : f.title, fid) +
+      '<div class="fstage"><div class="fnav"><a class="fback" href="#cat-' + esc(c.cat) + '">← ' + esc(cat.name) + "</a></div>" + '<div class="fcopy"><span class="fkick">' + esc(cat.name) + (lead && lead.id === id ? " · predicted winner" : "") + "</span>" +
+      '<h1 id="ftitle" tabindex="-1"' + fitStyle(c.name) + '>' + esc(c.name) + '</h1><p class="flog">' + esc(logline) + "</p></div></div>" + rail + "</section>";
+
+    function tile(l, v, sub) { return '<div><span class="l">' + l + '</span><span class="v">' + v + '</span><span class="s">' + sub + "</span></div>"; }
+    var sum = '<section class="fsum" aria-label="Key numbers">' +
+      tile("Nominated", pct(r.pNom), m === "pNom" && dTxt ? esc(dTxt) : "odds to be nominated") +
+      tile("Wins the Oscar", pct(r.pWin), m === "pWin" && dTxt ? esc(dTxt) : "odds to win") +
+      tile("Strength", r.s.toFixed(1), "on the 100-point scale") +
+      tile("Rank", "#" + r.rank, "of " + cc.rows.length + " in " + esc(cat.short)) +
+      tile("Awards won", String(at.w), at.o ? "+" + at.o + " nominations & honors" : "this season") +
+      tile("Signals", String(items.length), "recorded events") + "</section>";
+
+    // outlook: why this number + chart | the race + elsewhere
+    var p = r.parts, comps = [["Festivals", p.festival], ["Precursors", p.precursor], ["Buzz & PR", p.pr], ["Academy", p.academy], ["Reviews", p.critics]].filter(function (x) { return Math.abs(x[1]) >= 0.05 || x[0] !== "Academy"; });
+    var mx = Math.max(5, Math.max.apply(null, comps.map(function (x) { return Math.abs(x[1]); })));
+    var parts = '<div class="parts"><div class="part"><span class="pl">Baseline (consensus)</span><span></span><span class="pv">' + p.base.toFixed(1) + "</span></div>" +
+      comps.map(function (x) {
+        var w = Math.min(50, Math.abs(x[1]) / mx * 50);
+        return '<div class="part"><span class="pl">' + x[0] + '</span><span class="div" aria-hidden="true">' + (Math.abs(x[1]) >= 0.05 ? '<i class="' + (x[1] > 0 ? "up" : "down") + '" style="width:' + w.toFixed(1) + '%"></i>' : "") + '</span><span class="pv">' + signed(x[1]) + "</span></div>";
+      }).join("") + '<div class="part total"><span class="pl">Strength</span><span></span><span class="pv">' + r.s.toFixed(1) + "</span></div></div>";
+    var n = Math.max(cc.slots + 3, r.live ? live.indexOf(r) + 2 : 0);
+    var raceRows = live.slice(0, n);
+    var race = oddsHead() + '<ol class="odds">' + raceRows.map(function (x) {
+      var h = oddsRow(x, lead && lead.id);
+      return x.id === id ? h.replace('<li class="orow', '<li aria-current="true" class="orow me') : h;
+    }).join("") + "</ol>";
+    var also = Object.keys(ROW).filter(function (k) { return k !== id && ROW[k].c.film === fid; }).map(function (k) { return ROW[k]; }).sort(function (a, b) { return b.pNom - a.pNom; });
+    var alsoHtml = also.length ? '<div class="panel"><h3>' + esc(f.title) + " elsewhere <small>" + plural(also.length, "category").replace("categorys", "categories") + '</small></h3><div class="fx">' + also.map(function (o) {
+      return '<button type="button" class="fxc" data-act="c" data-id="' + esc(o.id) + '"><span class="lbl">' + esc(CAT[o.c.cat].short) + (PERSON[o.c.cat] ? " · " + esc(o.c.name) : "") + '</span><span class="pts">' + pct(o.pNom) + "</span></button>";
+    }).join("") + "</div></div>" : "";
+    var outlook = '<div class="fgrid fout"><div class="fcol">' + (c.note ? '<div class="note-box">' + esc(c.note) + "</div>" : "") +
+      '<div class="panel"><h3>Why this number <small>strength ' + r.s.toFixed(1) + "</small></h3>" + parts + "</div>" +
+      '<div class="panel"><h3>Odds over time</h3>' + chartHtml(history(id)) + "</div></div>" +
+      '<div class="fcol"><div class="panel"><h3>The race <a href="#cat-' + esc(c.cat) + '">All ' + cc.rows.length + " →</a></h3>" + (raceRows.length ? '<div class="catlist race">' + race + "</div>" : '<p class="empty">No live contenders.</p>') + "</div>" + alsoHtml + "</div></div>";
+
+    var awards = '<div class="panel"><h3>Awards &amp; honors <small>' + (at.n ? at.w + " won" + (at.o ? " · " + at.o + " other" : "") : "") + "</small></h3>" +
+      (at.n ? (FILMCAT[c.cat] ? '<p class="empty" style="padding:0 0 4px">Includes prizes for the film’s cast and crew.</p>' : "") + awardsFeed(aws, !!FILMCAT[c.cat], fid) : '<p class="empty">No awards yet. Festival prizes, critics groups and guild results land here as they’re announced.</p>') + "</div>";
+    var evidence = '<div class="panel"><h3>Evidence <small>' + plural(items.length, "event") + "</small></h3>" + (items.length ? '<ul class="feed">' + items.map(function (it) {
+      var s = S.signals[it.id], decayed = Math.abs(it.raw - it.eff) >= 0.05;
+      return '<li class="item"><div class="when">' + fmtDay(s.date, true) + '</div><div><div class="head"><span class="tag">' + esc(KIND[s.kind] || s.kind) + (s.body && bodyName(s.body) ? " · " + esc(bodyName(s.body)) : "") + "</span>" + toneTag(s) +
+        '<span class="ttl">' + esc(s.title) + '</span></div><p><strong class="mono" style="color:var(--' + (it.eff >= 0 ? "good" : "bad") + ')">' + signed(it.eff) + " pts</strong>" + (decayed ? " now (was " + signed(it.raw) + ", fading)" : "") + (s.detail ? " · " + esc(s.detail) : "") + "</p>" + sourceLink(s) + "</div></li>";
+    }).join("") + "</ul>" : '<p class="empty">No events recorded for this contender yet. Its odds come from the consensus baseline.</p>') + "</div>";
+    var consensus = '<div class="panel"><h3>Consensus notes <small>how the baseline has moved</small></h3>' + (baseList.length ? '<ul class="feed">' + baseList.map(function (b) {
+      return '<li class="item"><div class="when">' + fmtDay(b.d, true) + '</div><div><p style="margin:0"><strong class="mono">' + Number(b.v).toFixed(1) + "</strong> · " + esc(b.why || "") + "</p></div></li>";
+    }).join("") + "</ul>" : '<p class="empty">No baseline recorded.</p>') + "</div>";
+
+    var cur = TABSC.some(function (t) { return t[0] === V.ftab; }) ? V.ftab : "outlook";
+    var tabs = '<div class="ftabs" role="tablist" aria-label="Contender sections" id="f-tabs">' + TABSC.map(function (t) {
+      return '<button type="button" role="tab" data-act="ftab" data-id="' + t[0] + '" aria-selected="' + (t[0] === cur) + '">' + t[1] + (t[2] ? " <small>" + t[2] + "</small>" : "") + "</button>";
+    }).join("") + "</div>";
+    var body = cur === "awards" ? awards : cur === "evidence" ? evidence : cur === "consensus" ? consensus : outlook;
+    return '<div class="fp">' + hero + sum + '<div class="fsec">' + tabs + '<div class="fbody" role="tabpanel">' + body + "</div></div></div>";
+  }
+
+  // odds-over-time chart (two series: nomination, win)
+  var CH = null;
+  function chartHtml(pts) {
+    CH = null;
+    if (pts.length < 2) {
+      return '<p class="empty">History starts ' + (S.meta && S.meta.trackingSince ? fmtDay(S.meta.trackingSince, true) : "today") + ". Each daily update adds a point, so the line fills in as the season moves.</p>";
+    }
+    var W = 480, H = 168, L = 36, R = 12, T = 8, B = 24;
+    var d0 = pts[0].day, d1 = pts[pts.length - 1].day;
+    function x(d) { return L + (W - L - R) * (d - d0) / Math.max(1, d1 - d0); }
+    function y(p) { return T + (H - T - B) * (1 - p); }
+    var grid = [0, 0.25, 0.5, 0.75, 1].map(function (p) {
+      return '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(p).toFixed(1) + '" y2="' + y(p).toFixed(1) + '" stroke="var(--rule)" stroke-width="1"/>' +
+        '<text x="' + (L - 6) + '" y="' + (y(p) + 3.5).toFixed(1) + '" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">' + Math.round(p * 100) + "%</text>";
+    }).join("");
+    function path(k) { return pts.map(function (p, i) { return (i ? "L" : "M") + x(p.day).toFixed(1) + " " + y(p[k]).toFixed(1); }).join(" "); }
+    var last = pts[pts.length - 1];
+    var lab = '<text x="' + L + '" y="' + (H - 6) + '" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">' + fmtDay(M.isoFromDay(d0)) + "</text>" +
+      '<text x="' + (W - R) + '" y="' + (H - 6) + '" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">' + fmtDay(M.isoFromDay(d1)) + "</text>";
+    CH = { pts: pts, x: x, y: y, W: W, H: H, L: L, R: R };
+    return '<div class="chart"><div class="legend"><span><i style="background:var(--nom)"></i>Nominated</span><span><i style="background:var(--win)"></i>Wins</span></div>' +
+      '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Nomination odds ' + pct(last.nom) + ", win odds " + pct(last.win) + ', over time">' + grid + lab +
+      '<path d="' + path("nom") + '" fill="none" stroke="var(--nom)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>' +
+      '<path d="' + path("win") + '" fill="none" stroke="var(--win)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>' +
+      '<circle cx="' + x(last.day).toFixed(1) + '" cy="' + y(last.nom).toFixed(1) + '" r="4" fill="var(--nom)" stroke="var(--surface)" stroke-width="2"/>' +
+      '<circle cx="' + x(last.day).toFixed(1) + '" cy="' + y(last.win).toFixed(1) + '" r="4" fill="var(--win)" stroke="var(--surface)" stroke-width="2"/>' +
+      '<line class="cross" x1="0" x2="0" y1="' + T + '" y2="' + (H - B) + '" stroke="var(--ink-3)" stroke-width="1" visibility="hidden"/>' +
+      '<rect class="hit" x="' + L + '" y="0" width="' + (W - L - R) + '" height="' + H + '" fill="transparent"/></svg><div class="tip" hidden></div></div>';
+  }
+  function wireChart(root) {
+    if (!CH) return;
+    var box = (root || drawer).querySelector(".chart"); if (!box) return;
+    var svg = box.querySelector("svg"), hit = box.querySelector(".hit"), cross = box.querySelector(".cross"), tip = box.querySelector(".tip");
+    function move(ev) {
+      var rect = svg.getBoundingClientRect(), sx = (ev.clientX - rect.left) / rect.width * CH.W;
+      var best = CH.pts[0], bd = Infinity;
+      CH.pts.forEach(function (p) { var dd = Math.abs(CH.x(p.day) - sx); if (dd < bd) { bd = dd; best = p; } });
+      var px = CH.x(best.day);
+      cross.setAttribute("x1", px); cross.setAttribute("x2", px); cross.setAttribute("visibility", "visible");
+      tip.hidden = false;
+      tip.innerHTML = fmtDay(M.isoFromDay(best.day), true) + " · Nominated <b>" + pct(best.nom) + "</b> · Wins <b>" + pct(best.win) + "</b>";
+      var left = px / CH.W * rect.width, top = CH.y(Math.max(best.nom, best.win)) / CH.H * rect.height;
+      tip.style.left = (svg.offsetLeft + Math.max(70, Math.min(rect.width - 70, left))) + "px"; tip.style.top = (svg.offsetTop + Math.max(18, top)) + "px";
+    }
+    function leave() { cross.setAttribute("visibility", "hidden"); tip.hidden = true; }
+    hit.addEventListener("pointermove", move); hit.addEventListener("pointerdown", move); hit.addEventListener("pointerleave", leave);
+  }
+
+  // ------------------------------------------------------------ states & render
+  function stateBox(title, text) { return '<div class="state-box"><h2>' + title + "</h2><p>" + text + "</p></div>"; }
+  function updateMast() {
+    var live = document.getElementById("live");
+    if (!live) return;
+    var m = S.meta;
+    live.className = "live" + (S.status === "live" ? " on" : "");
+    live.querySelector("span.t").textContent = (S.status === "live" || S.status === "snapshot") && m && m.lastUpdated ? "Updated " + fmtStamp(m.lastUpdated) :
+      S.status === "loading" ? "Connecting…" : S.status === "unavailable" ? "Offline" : S.status === "error" ? "Connection lost" : "Live";
+    var um = document.querySelector(".upd-m"); if (um) um.textContent = " · " + live.querySelector("span.t").textContent;
+  }
+  var syncedTab = null;
+  function syncTabs() {
+    var curEl = null;
+    document.querySelectorAll(".tabs a").forEach(function (a) {
+      var t = a.getAttribute("data-tab"); var cur = V.tab === t || ((V.tab === "cat" || V.tab === "contender") && t === "forecast") || (V.tab === "film" && t === "films");
+      if (cur) { a.setAttribute("aria-current", "page"); curEl = a; } else a.removeAttribute("aria-current");
+    });
+    // on phones the tab rail scrolls sideways: keep the current tab in view
+    var rail = document.querySelector(".tabs");
+    if (curEl && rail && syncedTab !== V.tab && rail.scrollWidth > rail.clientWidth + 1) {
+      var l = curEl.offsetLeft - rail.offsetLeft, r = l + curEl.offsetWidth;
+      if (l < rail.scrollLeft + 16 || r > rail.scrollLeft + rail.clientWidth - 16) rail.scrollLeft = Math.max(0, l - 24);
+    }
+    syncedTab = V.tab;
+  }
+  function render() {
+    updateMast(); syncTabs();
+    var app = document.getElementById("app");
+    if (S.status === "unavailable") {
+      app.innerHTML = S.inClaude ? stateBox("The live forecast loads inside Claude", "This page reads its odds from a live database. Open it from Claude while signed in to see today’s numbers for all 24 categories.") :
+        stateBox("The forecast data didn’t load", "This page reads its odds from data.json. Make sure that file sits next to index.html, or rebuild the page with build.py so the data is built in.");
+      return;
+    }
+    if (!hasData()) {
+      if (S.status === "live") app.innerHTML = stateBox("No contenders yet", "The first daily research run fills this page with contenders, festival results and odds.");
+      else if (S.status === "error") app.innerHTML = stateBox("The forecast couldn’t load", "The connection to the live data dropped. Reload the page to try again.");
+      return; // keep the static loading frame
+    }
+    compute();
+    var html = V.tab === "contender" && V.cid ? contenderPage(V.cid) : V.tab === "film" && V.film ? filmPage(V.film) : V.tab === "cat" && V.cat ? categoryView(V.cat) : V.tab === "nominations" ? nominationsView() : V.tab === "awards" ? awardsView() : V.tab === "films" ? filmsView() : V.tab === "festivals" ? festivalsView() :
+      V.tab === "precursors" ? precursorsView() : V.tab === "buzz" ? buzzView() : V.tab === "method" ? methodView() : forecastView();
+    var fmFilm = V.tab === "film" && S.films[V.film] ? V.film : V.tab === "contender" && ROW[V.cid] ? ROW[V.cid].c.film : null, root = document.documentElement;
+    root.classList.toggle("filmmode", !!fmFilm);
+    if (fmFilm) root.style.setProperty("--ph", hueOf(fmFilm)); else root.style.removeProperty("--ph");
+    app.innerHTML = html;
+    if (V.tab === "contender") wireChart(app);
+    if (V.tab === "forecast") wireSlides(app);
+    if (V.tab === "film") {
+      wireChart(app);
+      var rail = app.querySelector(".strip"), td = app.querySelector("#f-today");
+      if (rail && td) rail.scrollLeft = Math.max(0, td.offsetLeft - rail.offsetLeft - rail.clientWidth / 2 + td.offsetWidth / 2);
+    }
+    if (V.drawer) renderDrawer();
+  }
+  function readHash() {
+    var h = (location.hash || "").replace(/^#/, "");
+    V.film = null; V.cid = null;
+    if (h.indexOf("c-") === 0 && h.length > 2) { V.tab = "contender"; V.cid = h.slice(2); V.cat = null; }
+    else if (h.indexOf("film-") === 0 && h.length > 5) { V.tab = "film"; V.film = h.slice(5); V.cat = null; }
+    else if (h.indexOf("cat-") === 0 && CAT[h.slice(4)]) { V.tab = "cat"; V.cat = h.slice(4); }
+    else if (TABS.indexOf(h) >= 0) { V.tab = h; V.cat = null; }
+    else { V.tab = "forecast"; V.cat = null; }
+  }
+
+  // ------------------------------------------------------------ events
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-act]"); if (!t) return;
+    var act = t.getAttribute("data-act"), id = t.getAttribute("data-id");
+    if (act === "c") { e.preventDefault(); if (location.hash !== "#c-" + id) location.hash = "c-" + id; else if (V.drawer) closeDrawer(); }
+    else if (act === "f") { e.preventDefault(); if (location.hash !== "#film-" + id) location.hash = "film-" + id; else if (V.drawer) closeDrawer(); }
+    else if (act === "ftab") {
+      V.ftab = id; render();
+      if (t.getAttribute("data-scroll")) { var tb = document.getElementById("f-tabs"); if (tb) tb.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); }
+    }
+    else if (act === "hprev" || act === "hnext") { showSlide((V.slide || 0) + (act === "hnext" ? 1 : -1)); startSlides(); }
+    else if (act === "hplay") { V.autoplay = !V.autoplay; render(); }
+    else if (act === "fall") { V.fall = !V.fall; render(); }
+    else if (act === "fpane") {
+      V.fpane = +id || 0;
+      document.querySelectorAll(".fpane").forEach(function (el) { el.hidden = el.getAttribute("data-pane") !== String(V.fpane); });
+      document.querySelectorAll('.fdots button').forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-id") === String(V.fpane))); });
+    }
+    else if (act === "jump") { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); }
+    else if (act === "close") closeDrawer();
+    else if (act === "grp") { V.group = id; try { localStorage.setItem("of.group", id); } catch (err) { /* ignore */ } render(); }
+    else if (act === "agrp") { V.agroup = id; try { localStorage.setItem("of.agroup", id); } catch (err) { /* ignore */ } render(); }
+    else if (act === "buzz") { V.buzz = id; render(); }
+    else if (act === "films-all") { V.filmsAll = !V.filmsAll; render(); }
+    else if (act === "board-all") { V.boardAll = !V.boardAll; render(); }
+    else if (act === "tally-all") { V.tallyAll = !V.tallyAll; render(); }
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && V.drawer) closeDrawer(); });
+  window.addEventListener("hashchange", function () {
+    var before = V.tab + (V.cat || "") + (V.film || "") + (V.cid || ""); readHash();
+    if (V.drawer) { V.opener = null; closeDrawer(); }
+    render();
+    if (before !== V.tab + (V.cat || "") + (V.film || "") + (V.cid || "")) {
+      V.fpane = 0; V.ftab = "outlook"; V.fall = false;
+      window.scrollTo(0, 0);
+      var h1 = (V.tab === "film" || V.tab === "contender") && document.getElementById("ftitle"); if (h1) h1.focus({ preventScroll: true });
+    }
+  });
+
+  function boot() {
+    drawer = document.getElementById("drawer"); scrim = document.getElementById("scrim");
+    scrim.addEventListener("click", closeDrawer);
+    readHash(); render(); connect();
+    setInterval(function () { if (doneDay && doneDay !== todayISO()) render(); }, 60000);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})();
+
+</script>
+
+</body></html>
